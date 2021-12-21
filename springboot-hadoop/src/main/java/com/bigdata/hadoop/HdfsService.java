@@ -1,17 +1,26 @@
 package com.bigdata.hadoop;
 
 import com.alibaba.fastjson.JSON;
+import com.bigdata.hadoop.reduce.mapper.WordCountMap;
+import com.bigdata.hadoop.reduce.mapper.WordCountReduce;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.*;
 import org.apache.hadoop.hdfs.web.JsonUtil;
 import org.apache.hadoop.io.IOUtils;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.CombineTextInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.PostConstruct;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.util.ArrayList;
@@ -42,10 +51,38 @@ public class HdfsService {
      * @return
      */
     private static Configuration getConfiguration() {
-        System.out.println("===============================");
         Configuration configuration = new Configuration();
         configuration.set("fs.defaultFS", hdfsPath);
+        configuration.set("mapred.job.tracker", hdfsPath);
+        // 运行在yarn的集群模式
+        // configuration.set("mapreduce.framework.name", "yarn");
+        // 这个配置是让main方法寻找该机器的mr环境
+        // configuration.set("yarn.resourcemanmager.hostname", "node1");
         return configuration;
+    }
+
+    public static void getWordCountJobsConf(String jobName, String inputPath, String outputPath)
+            throws IOException, ClassNotFoundException, InterruptedException {
+        Configuration conf = getConfiguration();
+        Job job = Job.getInstance(conf, jobName);
+
+        job.setMapperClass(WordCountMap.class);
+        job.setCombinerClass(WordCountReduce.class);
+        job.setReducerClass(WordCountReduce.class);
+
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(IntWritable.class);
+
+        // 小文件合并设置
+        job.setInputFormatClass(CombineTextInputFormat.class);
+        // 最大分片
+        CombineTextInputFormat.setMaxInputSplitSize(job, 4 * 1024 * 1024);
+        // 最小分片
+        CombineTextInputFormat.setMinInputSplitSize(job, 2 * 1024 * 1024);
+
+        FileInputFormat.addInputPath(job, new Path(inputPath));
+        FileOutputFormat.setOutputPath(job, new Path(outputPath));
+        job.waitForCompletion(true);
     }
 
     /**

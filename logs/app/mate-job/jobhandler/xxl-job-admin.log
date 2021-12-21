@@ -1,0 +1,1146 @@
+2021-12-21 00:01:06,090 WARN [Thread-16] org.apache.hadoop.hdfs.DataStreamer [DataStreamer.java : 826] DataStreamer Exception
+org.apache.hadoop.ipc.RemoteException: File /dd/test could only be written to 0 of the 1 minReplication nodes. There are 0 datanode(s) running and 0 node(s) are excluded in this operation.
+	at org.apache.hadoop.hdfs.server.blockmanagement.BlockManager.chooseTarget4NewBlock(BlockManager.java:2278)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirWriteFileOp.chooseTargetForNewBlock(FSDirWriteFileOp.java:294)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:2808)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.addBlock(NameNodeRpcServer.java:905)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.addBlock(ClientNamenodeProtocolServerSideTranslatorPB.java:577)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1086)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1029)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:957)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1762)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2957)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1497)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1443)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1353)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:228)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:116)
+	at com.sun.proxy.$Proxy71.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.addBlock(ClientNamenodeProtocolTranslatorPB.java:510)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy72.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSOutputStream.addBlock(DFSOutputStream.java:1078)
+	at org.apache.hadoop.hdfs.DataStreamer.locateFollowingBlock(DataStreamer.java:1865)
+	at org.apache.hadoop.hdfs.DataStreamer.nextBlockOutputStream(DataStreamer.java:1668)
+	at org.apache.hadoop.hdfs.DataStreamer.run(DataStreamer.java:716)
+2021-12-21 00:01:06,101 ERROR [http-nio-8080-exec-5] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 175] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.apache.hadoop.ipc.RemoteException: File /dd/test could only be written to 0 of the 1 minReplication nodes. There are 0 datanode(s) running and 0 node(s) are excluded in this operation.
+	at org.apache.hadoop.hdfs.server.blockmanagement.BlockManager.chooseTarget4NewBlock(BlockManager.java:2278)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirWriteFileOp.chooseTargetForNewBlock(FSDirWriteFileOp.java:294)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:2808)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.addBlock(NameNodeRpcServer.java:905)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.addBlock(ClientNamenodeProtocolServerSideTranslatorPB.java:577)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1086)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1029)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:957)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1762)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2957)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1497)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1443)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1353)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:228)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:116)
+	at com.sun.proxy.$Proxy71.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.addBlock(ClientNamenodeProtocolTranslatorPB.java:510)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy72.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSOutputStream.addBlock(DFSOutputStream.java:1078)
+	at org.apache.hadoop.hdfs.DataStreamer.locateFollowingBlock(DataStreamer.java:1865)
+	at org.apache.hadoop.hdfs.DataStreamer.nextBlockOutputStream(DataStreamer.java:1668)
+	at org.apache.hadoop.hdfs.DataStreamer.run(DataStreamer.java:716)
+2021-12-21 00:01:26,537 WARN [Thread-19] org.apache.hadoop.hdfs.DataStreamer [DataStreamer.java : 826] DataStreamer Exception
+org.apache.hadoop.ipc.RemoteException: File /dd/test could only be written to 0 of the 1 minReplication nodes. There are 0 datanode(s) running and 0 node(s) are excluded in this operation.
+	at org.apache.hadoop.hdfs.server.blockmanagement.BlockManager.chooseTarget4NewBlock(BlockManager.java:2278)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirWriteFileOp.chooseTargetForNewBlock(FSDirWriteFileOp.java:294)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:2808)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.addBlock(NameNodeRpcServer.java:905)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.addBlock(ClientNamenodeProtocolServerSideTranslatorPB.java:577)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1086)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1029)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:957)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1762)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2957)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1497)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1443)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1353)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:228)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:116)
+	at com.sun.proxy.$Proxy71.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.addBlock(ClientNamenodeProtocolTranslatorPB.java:510)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy72.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSOutputStream.addBlock(DFSOutputStream.java:1078)
+	at org.apache.hadoop.hdfs.DataStreamer.locateFollowingBlock(DataStreamer.java:1865)
+	at org.apache.hadoop.hdfs.DataStreamer.nextBlockOutputStream(DataStreamer.java:1668)
+	at org.apache.hadoop.hdfs.DataStreamer.run(DataStreamer.java:716)
+2021-12-21 00:01:26,537 ERROR [http-nio-8080-exec-7] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 175] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.apache.hadoop.ipc.RemoteException: File /dd/test could only be written to 0 of the 1 minReplication nodes. There are 0 datanode(s) running and 0 node(s) are excluded in this operation.
+	at org.apache.hadoop.hdfs.server.blockmanagement.BlockManager.chooseTarget4NewBlock(BlockManager.java:2278)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirWriteFileOp.chooseTargetForNewBlock(FSDirWriteFileOp.java:294)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:2808)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.addBlock(NameNodeRpcServer.java:905)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.addBlock(ClientNamenodeProtocolServerSideTranslatorPB.java:577)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:528)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1086)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1029)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:957)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1762)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2957)
+
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1497)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1443)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1353)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:228)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:116)
+	at com.sun.proxy.$Proxy71.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.addBlock(ClientNamenodeProtocolTranslatorPB.java:510)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy72.addBlock(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSOutputStream.addBlock(DFSOutputStream.java:1078)
+	at org.apache.hadoop.hdfs.DataStreamer.locateFollowingBlock(DataStreamer.java:1865)
+	at org.apache.hadoop.hdfs.DataStreamer.nextBlockOutputStream(DataStreamer.java:1668)
+	at org.apache.hadoop.hdfs.DataStreamer.run(DataStreamer.java:716)
+2021-12-21 00:05:06,053 INFO [main] com.bigdata.HdfsApplication [StartupInfoLogger.java : 55] Starting HdfsApplication on DESKTOP-ORCB6UD with PID 788 (C:\Users\UI\Desktop\bd-platform\springboot-hadoop\target\classes started by UI in C:\Users\UI\Desktop\bd-platform)
+2021-12-21 00:05:06,056 INFO [main] com.bigdata.HdfsApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-12-21 00:05:06,727 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
+2021-12-21 00:05:06,734 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-21 00:05:06,734 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-12-21 00:05:06,735 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-12-21 00:05:06,827 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-12-21 00:05:06,827 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 735 ms
+2021-12-21 00:05:06,971 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-21 00:05:07,097 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
+2021-12-21 00:05:07,115 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-21 00:05:07,122 INFO [main] com.bigdata.HdfsApplication [StartupInfoLogger.java : 61] Started HdfsApplication in 1.386 seconds (JVM running for 2.425)
+2021-12-21 00:05:11,223 INFO [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-21 00:05:11,224 INFO [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2021-12-21 00:05:11,228 INFO [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 4 ms
+2021-12-21 00:05:11,358 WARN [http-nio-8080-exec-2] org.apache.hadoop.util.Shell [Shell.java : 694] Did not find winutils.exe: {}
+java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+	at org.apache.hadoop.util.Shell.fileNotFoundException(Shell.java:549)
+	at org.apache.hadoop.util.Shell.getHadoopHomeDir(Shell.java:570)
+	at org.apache.hadoop.util.Shell.getQualifiedBin(Shell.java:593)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:690)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:78)
+	at org.apache.hadoop.fs.FileSystem$Cache$Key.<init>(FileSystem.java:3533)
+	at org.apache.hadoop.fs.FileSystem$Cache$Key.<init>(FileSystem.java:3528)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3370)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:477)
+	at org.apache.hadoop.fs.FileSystem$1.run(FileSystem.java:216)
+	at org.apache.hadoop.fs.FileSystem$1.run(FileSystem.java:213)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:213)
+	at com.bigdata.hadoop.HdfsService.getFileSystem(HdfsService.java:97)
+	at com.bigdata.hadoop.HdfsService.uploadFile(HdfsService.java:307)
+	at com.bigdata.controller.HdfsAction.uploadFile(HdfsAction.java:194)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.
+	at org.apache.hadoop.util.Shell.checkHadoopHomeInner(Shell.java:469)
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:440)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:517)
+	... 64 common frames omitted
+2021-12-21 00:05:23,360 INFO [http-nio-8080-exec-4] o.a.h.conf.Configuration.deprecation [Configuration.java : 1395] mapred.job.tracker is deprecated. Instead, use mapreduce.jobtracker.address
+2021-12-21 00:06:04,283 INFO [http-nio-8080-exec-9] o.a.coyote.http11.Http11Processor [DirectJDKLog.java : 175] Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in the request target [/hadoop/reduce/wordCount?jobName=wordCount&inputPath=C:\Users\UI\Desktop\bd-platform\data\count.txt]. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:490)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:261)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2021-12-21 00:06:23,355 INFO [http-nio-8080-exec-1] o.a.c.b.FluentPropertyBeanIntrospector [FluentPropertyBeanIntrospector.java : 147] Error when creating PropertyDescriptor for public final void org.apache.commons.configuration2.AbstractConfiguration.setProperty(java.lang.String,java.lang.Object)! Ignoring this property.
+2021-12-21 00:06:23,367 WARN [http-nio-8080-exec-1] o.a.h.metrics2.impl.MetricsConfig [MetricsConfig.java : 134] Cannot locate configuration: tried hadoop-metrics2-jobtracker.properties,hadoop-metrics2.properties
+2021-12-21 00:06:23,392 INFO [http-nio-8080-exec-1] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 374] Scheduled Metric snapshot period at 10 second(s).
+2021-12-21 00:06:23,393 INFO [http-nio-8080-exec-1] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 191] JobTracker metrics system started
+2021-12-21 00:06:23,837 WARN [http-nio-8080-exec-1] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 147] Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+2021-12-21 00:06:23,859 WARN [http-nio-8080-exec-1] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 480] No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2021-12-21 00:06:23,880 INFO [http-nio-8080-exec-1] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 263] Cleaning up the staging area file:/tmp/hadoop/mapred/staging/UI1824351502/.staging/job_local1824351502_0001
+2021-12-21 00:06:23,886 ERROR [http-nio-8080-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 175] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.apache.hadoop.mapreduce.lib.input.InvalidInputException: Input path does not exist: hdfs://localhost:9000/user/UI/test/count.txt;
+	at org.apache.hadoop.mapreduce.lib.input.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:332)
+	at org.apache.hadoop.mapreduce.lib.input.FileInputFormat.listStatus(FileInputFormat.java:274)
+	at org.apache.hadoop.mapreduce.lib.input.CombineFileInputFormat.getSplits(CombineFileInputFormat.java:217)
+	at org.apache.hadoop.mapreduce.JobSubmitter.writeNewSplits(JobSubmitter.java:313)
+	at org.apache.hadoop.mapreduce.JobSubmitter.writeSplits(JobSubmitter.java:330)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:203)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.Job.waitForCompletion(Job.java:1588)
+	at com.bigdata.hadoop.HdfsService.getWordCountJobsConf(HdfsService.java:85)
+	at com.bigdata.hadoop.MapReduceService.wordCount(MapReduceService.java:36)
+	at com.bigdata.controller.MapReduceAction.wordCount(MapReduceAction.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2021-12-21 00:06:54,754 WARN [http-nio-8080-exec-4] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 151] JobTracker metrics system already initialized!
+2021-12-21 00:06:54,763 WARN [http-nio-8080-exec-4] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 147] Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+2021-12-21 00:06:54,764 WARN [http-nio-8080-exec-4] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 480] No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2021-12-21 00:06:54,767 INFO [http-nio-8080-exec-4] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 263] Cleaning up the staging area file:/tmp/hadoop/mapred/staging/UI1073841551/.staging/job_local1073841551_0002
+2021-12-21 00:06:54,768 ERROR [http-nio-8080-exec-4] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 175] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.apache.hadoop.mapreduce.lib.input.InvalidInputException: Input path does not exist: hdfs://localhost:9000/hadoop/test/count.txt;
+	at org.apache.hadoop.mapreduce.lib.input.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:332)
+	at org.apache.hadoop.mapreduce.lib.input.FileInputFormat.listStatus(FileInputFormat.java:274)
+	at org.apache.hadoop.mapreduce.lib.input.CombineFileInputFormat.getSplits(CombineFileInputFormat.java:217)
+	at org.apache.hadoop.mapreduce.JobSubmitter.writeNewSplits(JobSubmitter.java:313)
+	at org.apache.hadoop.mapreduce.JobSubmitter.writeSplits(JobSubmitter.java:330)
+	at org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:203)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1570)
+	at org.apache.hadoop.mapreduce.Job$11.run(Job.java:1567)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.mapreduce.Job.submit(Job.java:1567)
+	at org.apache.hadoop.mapreduce.Job.waitForCompletion(Job.java:1588)
+	at com.bigdata.hadoop.HdfsService.getWordCountJobsConf(HdfsService.java:85)
+	at com.bigdata.hadoop.MapReduceService.wordCount(MapReduceService.java:36)
+	at com.bigdata.controller.MapReduceAction.wordCount(MapReduceAction.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2021-12-21 00:07:21,531 WARN [http-nio-8080-exec-5] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 151] JobTracker metrics system already initialized!
+2021-12-21 00:07:21,536 WARN [http-nio-8080-exec-5] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 147] Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+2021-12-21 00:07:21,537 WARN [http-nio-8080-exec-5] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 480] No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2021-12-21 00:07:21,540 INFO [http-nio-8080-exec-5] o.a.h.m.lib.input.FileInputFormat [FileInputFormat.java : 292] Total input files to process : 1
+2021-12-21 00:07:21,692 INFO [http-nio-8080-exec-5] o.a.h.m.l.i.CombineFileInputFormat [CombineFileInputFormat.java : 428] DEBUG: Terminated node allocation with : CompletedNodes: 1, size left: 150
+2021-12-21 00:07:21,737 INFO [http-nio-8080-exec-5] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 205] number of splits:1
+2021-12-21 00:07:21,841 INFO [http-nio-8080-exec-5] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 301] Submitting tokens for job: job_local1491577324_0003
+2021-12-21 00:07:21,841 INFO [http-nio-8080-exec-5] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 302] Executing with tokens: []
+2021-12-21 00:07:22,066 INFO [http-nio-8080-exec-5] org.apache.hadoop.mapreduce.Job [Job.java : 1574] The url to track the job: http://localhost:8080/
+2021-12-21 00:07:22,067 INFO [http-nio-8080-exec-5] org.apache.hadoop.mapreduce.Job [Job.java : 1619] Running job: job_local1491577324_0003
+2021-12-21 00:07:22,070 INFO [Thread-31] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 501] OutputCommitter set in config null
+2021-12-21 00:07:22,100 INFO [Thread-31] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
+2021-12-21 00:07:22,101 INFO [Thread-31] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2021-12-21 00:07:22,101 INFO [Thread-31] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 519] OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+2021-12-21 00:07:22,202 INFO [Thread-31] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 478] Waiting for map tasks
+2021-12-21 00:07:22,204 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 252] Starting task: attempt_local1491577324_0003_m_000000_0
+2021-12-21 00:07:22,242 INFO [LocalJobRunner Map Task Executor #0] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
+2021-12-21 00:07:22,242 INFO [LocalJobRunner Map Task Executor #0] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2021-12-21 00:07:22,248 INFO [LocalJobRunner Map Task Executor #0] o.a.h.y.util.ProcfsBasedProcessTree [ProcfsBasedProcessTree.java : 178] ProcfsBasedProcessTree currently is supported only on Linux.
+2021-12-21 00:07:22,249 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 625]  Using ResourceCalculatorProcessTree : null
+2021-12-21 00:07:22,264 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 768] Processing split: Paths:/user/hadoop/test/count.txt:0+150
+2021-12-21 00:07:22,290 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1219] (EQUATOR) 0 kvi 26214396(104857584)
+2021-12-21 00:07:22,290 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1012] mapreduce.task.io.sort.mb: 100
+2021-12-21 00:07:22,290 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1013] soft limit at 83886080
+2021-12-21 00:07:22,290 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1014] bufstart = 0; bufvoid = 104857600
+2021-12-21 00:07:22,290 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1015] kvstart = 26214396; length = 6553600
+2021-12-21 00:07:22,294 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 409] Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2021-12-21 00:07:22,297 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 2064] Ignoring exception during close for org.apache.hadoop.mapred.MapTask$NewTrackingRecordReader@49e38a49
+java.lang.NullPointerException: null
+	at org.apache.hadoop.mapred.MapTask$NewTrackingRecordReader.close(MapTask.java:535)
+	at org.apache.hadoop.mapred.MapTask.closeQuietly(MapTask.java:2061)
+	at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:808)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:347)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job$MapTaskRunnable.run(LocalJobRunner.java:271)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2021-12-21 00:07:22,297 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1476] Starting flush of map output
+2021-12-21 00:07:22,319 INFO [Thread-31] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 486] map task executor complete.
+2021-12-21 00:07:22,393 WARN [Thread-31] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 590] job_local1491577324_0003
+java.lang.Exception: java.lang.NullPointerException
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.runTasks(LocalJobRunner.java:492)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:552)
+Caused by: java.lang.NullPointerException: null
+	at org.apache.hadoop.mapred.MapTask$NewTrackingRecordReader.initialize(MapTask.java:560)
+	at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:798)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:347)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job$MapTaskRunnable.run(LocalJobRunner.java:271)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2021-12-21 00:07:23,075 INFO [http-nio-8080-exec-5] org.apache.hadoop.mapreduce.Job [Job.java : 1640] Job job_local1491577324_0003 running in uber mode : false
+2021-12-21 00:07:23,076 INFO [http-nio-8080-exec-5] org.apache.hadoop.mapreduce.Job [Job.java : 1647]  map 0% reduce 0%
+2021-12-21 00:07:23,077 INFO [http-nio-8080-exec-5] org.apache.hadoop.mapreduce.Job [Job.java : 1660] Job job_local1491577324_0003 failed with state FAILED due to: NA
+2021-12-21 00:07:23,081 INFO [http-nio-8080-exec-5] org.apache.hadoop.mapreduce.Job [Job.java : 1665] Counters: 0
+2021-12-21 22:08:12,828 INFO [main] com.bigdata.HdfsApplication [StartupInfoLogger.java : 55] Starting HdfsApplication on DESKTOP-ORCB6UD with PID 7260 (C:\Users\UI\Desktop\bd-platform\springboot-hadoop\target\classes started by UI in C:\Users\UI\Desktop\bd-platform)
+2021-12-21 22:08:12,833 INFO [main] com.bigdata.HdfsApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-12-21 22:08:14,559 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
+2021-12-21 22:08:14,569 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-21 22:08:14,570 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-12-21 22:08:14,570 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-12-21 22:08:14,670 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-12-21 22:08:14,671 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 1724 ms
+2021-12-21 22:08:14,957 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-21 22:08:15,105 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
+2021-12-21 22:08:15,124 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-21 22:08:15,132 INFO [main] com.bigdata.HdfsApplication [StartupInfoLogger.java : 61] Started HdfsApplication in 2.883 seconds (JVM running for 4.488)
+2021-12-21 22:16:48,867 INFO [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-21 22:16:48,867 INFO [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2021-12-21 22:16:48,872 INFO [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 5 ms
+2021-12-21 22:16:49,298 WARN [http-nio-8080-exec-1] org.apache.hadoop.util.Shell [Shell.java : 694] Did not find winutils.exe: {}
+java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+	at org.apache.hadoop.util.Shell.fileNotFoundException(Shell.java:549)
+	at org.apache.hadoop.util.Shell.getHadoopHomeDir(Shell.java:570)
+	at org.apache.hadoop.util.Shell.getQualifiedBin(Shell.java:593)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:690)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:78)
+	at org.apache.hadoop.fs.FileSystem$Cache$Key.<init>(FileSystem.java:3533)
+	at org.apache.hadoop.fs.FileSystem$Cache$Key.<init>(FileSystem.java:3528)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3370)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:477)
+	at org.apache.hadoop.fs.FileSystem$1.run(FileSystem.java:216)
+	at org.apache.hadoop.fs.FileSystem$1.run(FileSystem.java:213)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:213)
+	at com.bigdata.hadoop.HdfsService.getFileSystem(HdfsService.java:97)
+	at com.bigdata.hadoop.HdfsService.existFile(HdfsService.java:132)
+	at com.bigdata.hadoop.HdfsService.readPathInfo(HdfsService.java:148)
+	at com.bigdata.controller.HdfsAction.readPathInfo(HdfsAction.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.
+	at org.apache.hadoop.util.Shell.checkHadoopHomeInner(Shell.java:469)
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:440)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:517)
+	... 65 common frames omitted
+2021-12-21 22:16:52,715 ERROR [http-nio-8080-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 175] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.net.ConnectException: Call From DESKTOP-ORCB6UD/192.168.1.8 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused: no further information; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:831)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:755)
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1501)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1443)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1353)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:228)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:116)
+	at com.sun.proxy.$Proxy71.getFileInfo(Unknown Source)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.getFileInfo(ClientNamenodeProtocolTranslatorPB.java:900)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+	at com.sun.proxy.$Proxy72.getFileInfo(Unknown Source)
+	at org.apache.hadoop.hdfs.DFSClient.getFileInfo(DFSClient.java:1654)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$29.doCall(DistributedFileSystem.java:1579)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$29.doCall(DistributedFileSystem.java:1576)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:1591)
+	at org.apache.hadoop.fs.FileSystem.exists(FileSystem.java:1734)
+	at com.bigdata.hadoop.HdfsService.existFile(HdfsService.java:134)
+	at com.bigdata.hadoop.HdfsService.readPathInfo(HdfsService.java:148)
+	at com.bigdata.controller.HdfsAction.readPathInfo(HdfsAction.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:687)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:790)
+	at org.apache.hadoop.ipc.Client$Connection.access$3600(Client.java:410)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1558)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1389)
+	... 74 common frames omitted
+2021-12-21 22:19:47,148 INFO [http-nio-8080-exec-3] o.a.h.conf.Configuration.deprecation [Configuration.java : 1395] mapred.job.tracker is deprecated. Instead, use mapreduce.jobtracker.address
+2021-12-21 22:46:06,677 INFO [main] com.bigdata.HdfsApplication [StartupInfoLogger.java : 55] Starting HdfsApplication on DESKTOP-ORCB6UD with PID 29024 (C:\Users\UI\Desktop\bd-platform\springboot-hadoop\target\classes started by UI in C:\Users\UI\Desktop\bd-platform)
+2021-12-21 22:46:06,680 INFO [main] com.bigdata.HdfsApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-12-21 22:46:07,355 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
+2021-12-21 22:46:07,363 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-21 22:46:07,363 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-12-21 22:46:07,363 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-12-21 22:46:07,459 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-12-21 22:46:07,459 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 746 ms
+2021-12-21 22:46:07,634 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-21 22:46:07,780 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
+2021-12-21 22:46:07,789 WARN [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java : 559] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2021-12-21 22:46:07,789 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-21 22:46:07,791 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Pausing ProtocolHandler ["http-nio-8080"]
+2021-12-21 22:46:07,791 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Stopping service [Tomcat]
+2021-12-21 22:46:07,795 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Stopping ProtocolHandler ["http-nio-8080"]
+2021-12-21 22:46:07,795 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Destroying ProtocolHandler ["http-nio-8080"]
+2021-12-21 22:46:07,800 INFO [main] o.s.b.a.l.ConditionEvaluationReportLoggingListener [ConditionEvaluationReportLoggingListener.java : 136] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-12-21 22:46:07,804 ERROR [main] o.s.b.d.LoggingFailureAnalysisReporter [LoggingFailureAnalysisReporter.java : 40] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2021-12-21 22:47:12,330 INFO [main] com.bigdata.HdfsApplication [StartupInfoLogger.java : 55] Starting HdfsApplication on DESKTOP-ORCB6UD with PID 13192 (C:\Users\UI\Desktop\bd-platform\springboot-hadoop\target\classes started by UI in C:\Users\UI\Desktop\bd-platform)
+2021-12-21 22:47:12,333 INFO [main] com.bigdata.HdfsApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-12-21 22:47:13,000 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
+2021-12-21 22:47:13,007 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-21 22:47:13,008 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-12-21 22:47:13,008 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-12-21 22:47:13,098 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-12-21 22:47:13,098 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 731 ms
+2021-12-21 22:47:13,235 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-21 22:47:13,368 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
+2021-12-21 22:47:13,377 WARN [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java : 559] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2021-12-21 22:47:13,378 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-21 22:47:13,380 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Pausing ProtocolHandler ["http-nio-8080"]
+2021-12-21 22:47:13,380 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Stopping service [Tomcat]
+2021-12-21 22:47:13,383 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Stopping ProtocolHandler ["http-nio-8080"]
+2021-12-21 22:47:13,384 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Destroying ProtocolHandler ["http-nio-8080"]
+2021-12-21 22:47:13,388 INFO [main] o.s.b.a.l.ConditionEvaluationReportLoggingListener [ConditionEvaluationReportLoggingListener.java : 136] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-12-21 22:47:13,393 ERROR [main] o.s.b.d.LoggingFailureAnalysisReporter [LoggingFailureAnalysisReporter.java : 40] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2021-12-21 22:48:32,069 INFO [main] com.bigdata.HdfsApplication [StartupInfoLogger.java : 55] Starting HdfsApplication on DESKTOP-ORCB6UD with PID 27720 (C:\Users\UI\Desktop\bd-platform\springboot-hadoop\target\classes started by UI in C:\Users\UI\Desktop\bd-platform)
+2021-12-21 22:48:32,072 INFO [main] com.bigdata.HdfsApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-12-21 22:48:32,761 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
+2021-12-21 22:48:32,768 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-21 22:48:32,769 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-12-21 22:48:32,769 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-12-21 22:48:32,860 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-12-21 22:48:32,860 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 752 ms
+2021-12-21 22:48:32,996 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-21 22:48:33,121 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
+2021-12-21 22:48:33,139 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-21 22:48:33,146 INFO [main] com.bigdata.HdfsApplication [StartupInfoLogger.java : 61] Started HdfsApplication in 1.374 seconds (JVM running for 2.478)
+2021-12-21 22:48:42,890 INFO [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-21 22:48:42,890 INFO [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2021-12-21 22:48:42,894 INFO [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 4 ms
+2021-12-21 22:48:42,993 WARN [http-nio-8080-exec-1] org.apache.hadoop.util.Shell [Shell.java : 694] Did not find winutils.exe: {}
+java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+	at org.apache.hadoop.util.Shell.fileNotFoundException(Shell.java:549)
+	at org.apache.hadoop.util.Shell.getHadoopHomeDir(Shell.java:570)
+	at org.apache.hadoop.util.Shell.getQualifiedBin(Shell.java:593)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:690)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:78)
+	at org.apache.hadoop.fs.FileSystem$Cache$Key.<init>(FileSystem.java:3533)
+	at org.apache.hadoop.fs.FileSystem$Cache$Key.<init>(FileSystem.java:3528)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3370)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:477)
+	at org.apache.hadoop.fs.FileSystem$1.run(FileSystem.java:216)
+	at org.apache.hadoop.fs.FileSystem$1.run(FileSystem.java:213)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:213)
+	at com.bigdata.hadoop.HdfsService.getFileSystem(HdfsService.java:97)
+	at com.bigdata.hadoop.HdfsService.existFile(HdfsService.java:132)
+	at com.bigdata.hadoop.MapReduceService.wordCount(MapReduceService.java:33)
+	at com.bigdata.controller.MapReduceAction.wordCount(MapReduceAction.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.
+	at org.apache.hadoop.util.Shell.checkHadoopHomeInner(Shell.java:469)
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:440)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:517)
+	... 65 common frames omitted
+2021-12-21 22:48:44,745 INFO [http-nio-8080-exec-1] o.a.h.conf.Configuration.deprecation [Configuration.java : 1395] mapred.job.tracker is deprecated. Instead, use mapreduce.jobtracker.address
+2021-12-21 22:48:45,165 INFO [http-nio-8080-exec-1] o.a.c.b.FluentPropertyBeanIntrospector [FluentPropertyBeanIntrospector.java : 147] Error when creating PropertyDescriptor for public final void org.apache.commons.configuration2.AbstractConfiguration.setProperty(java.lang.String,java.lang.Object)! Ignoring this property.
+2021-12-21 22:48:45,176 WARN [http-nio-8080-exec-1] o.a.h.metrics2.impl.MetricsConfig [MetricsConfig.java : 134] Cannot locate configuration: tried hadoop-metrics2-jobtracker.properties,hadoop-metrics2.properties
+2021-12-21 22:48:45,188 INFO [http-nio-8080-exec-1] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 374] Scheduled Metric snapshot period at 10 second(s).
+2021-12-21 22:48:45,189 INFO [http-nio-8080-exec-1] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 191] JobTracker metrics system started
+2021-12-21 22:48:45,670 WARN [http-nio-8080-exec-1] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 147] Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+2021-12-21 22:48:45,692 WARN [http-nio-8080-exec-1] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 480] No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2021-12-21 22:48:45,715 INFO [http-nio-8080-exec-1] o.a.h.m.lib.input.FileInputFormat [FileInputFormat.java : 292] Total input files to process : 1
+2021-12-21 22:48:46,057 INFO [http-nio-8080-exec-1] o.a.h.m.l.i.CombineFileInputFormat [CombineFileInputFormat.java : 428] DEBUG: Terminated node allocation with : CompletedNodes: 1, size left: 150
+2021-12-21 22:48:46,079 INFO [http-nio-8080-exec-1] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 205] number of splits:1
+2021-12-21 22:48:46,129 INFO [http-nio-8080-exec-1] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 301] Submitting tokens for job: job_local340614754_0001
+2021-12-21 22:48:46,129 INFO [http-nio-8080-exec-1] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 302] Executing with tokens: []
+2021-12-21 22:48:46,214 INFO [http-nio-8080-exec-1] org.apache.hadoop.mapreduce.Job [Job.java : 1574] The url to track the job: http://localhost:8080/
+2021-12-21 22:48:46,215 INFO [http-nio-8080-exec-1] org.apache.hadoop.mapreduce.Job [Job.java : 1619] Running job: job_local340614754_0001
+2021-12-21 22:48:46,217 INFO [Thread-18] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 501] OutputCommitter set in config null
+2021-12-21 22:48:46,224 INFO [Thread-18] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
+2021-12-21 22:48:46,224 INFO [Thread-18] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2021-12-21 22:48:46,225 INFO [Thread-18] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 519] OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+2021-12-21 22:48:46,473 INFO [Thread-18] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 478] Waiting for map tasks
+2021-12-21 22:48:46,474 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 252] Starting task: attempt_local340614754_0001_m_000000_0
+2021-12-21 22:48:46,494 INFO [LocalJobRunner Map Task Executor #0] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
+2021-12-21 22:48:46,494 INFO [LocalJobRunner Map Task Executor #0] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2021-12-21 22:48:46,500 INFO [LocalJobRunner Map Task Executor #0] o.a.h.y.util.ProcfsBasedProcessTree [ProcfsBasedProcessTree.java : 178] ProcfsBasedProcessTree currently is supported only on Linux.
+2021-12-21 22:48:46,501 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 625]  Using ResourceCalculatorProcessTree : null
+2021-12-21 22:48:46,515 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 768] Processing split: Paths:/user/hadoop/test/count.txt:0+150
+2021-12-21 22:48:46,548 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1219] (EQUATOR) 0 kvi 26214396(104857584)
+2021-12-21 22:48:46,548 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1012] mapreduce.task.io.sort.mb: 100
+2021-12-21 22:48:46,549 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1013] soft limit at 83886080
+2021-12-21 22:48:46,549 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1014] bufstart = 0; bufvoid = 104857600
+2021-12-21 22:48:46,549 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1015] kvstart = 26214396; length = 6553600
+2021-12-21 22:48:46,551 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 409] Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2021-12-21 22:48:46,556 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 2064] Ignoring exception during close for org.apache.hadoop.mapred.MapTask$NewTrackingRecordReader@46e6274
+java.lang.NullPointerException: null
+	at org.apache.hadoop.mapred.MapTask$NewTrackingRecordReader.close(MapTask.java:535)
+	at org.apache.hadoop.mapred.MapTask.closeQuietly(MapTask.java:2061)
+	at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:808)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:347)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job$MapTaskRunnable.run(LocalJobRunner.java:271)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2021-12-21 22:48:46,557 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1476] Starting flush of map output
+2021-12-21 22:48:46,569 INFO [Thread-18] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 486] map task executor complete.
+2021-12-21 22:48:46,682 WARN [Thread-18] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 590] job_local340614754_0001
+java.lang.Exception: java.lang.NullPointerException
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.runTasks(LocalJobRunner.java:492)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job.run(LocalJobRunner.java:552)
+Caused by: java.lang.NullPointerException: null
+	at org.apache.hadoop.mapred.MapTask$NewTrackingRecordReader.initialize(MapTask.java:560)
+	at org.apache.hadoop.mapred.MapTask.runNewMapper(MapTask.java:798)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:347)
+	at org.apache.hadoop.mapred.LocalJobRunner$Job$MapTaskRunnable.run(LocalJobRunner.java:271)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2021-12-21 22:48:47,222 INFO [http-nio-8080-exec-1] org.apache.hadoop.mapreduce.Job [Job.java : 1640] Job job_local340614754_0001 running in uber mode : false
+2021-12-21 22:48:47,224 INFO [http-nio-8080-exec-1] org.apache.hadoop.mapreduce.Job [Job.java : 1647]  map 0% reduce 0%
+2021-12-21 22:48:47,227 INFO [http-nio-8080-exec-1] org.apache.hadoop.mapreduce.Job [Job.java : 1660] Job job_local340614754_0001 failed with state FAILED due to: NA
+2021-12-21 22:48:47,230 INFO [http-nio-8080-exec-1] org.apache.hadoop.mapreduce.Job [Job.java : 1665] Counters: 0
+2021-12-21 23:26:25,939 INFO [main] com.bigdata.HdfsApplication [StartupInfoLogger.java : 55] Starting HdfsApplication on DESKTOP-ORCB6UD with PID 6288 (C:\Users\UI\Desktop\bd-platform\springboot-hadoop\target\classes started by UI in C:\Users\UI\Desktop\bd-platform)
+2021-12-21 23:26:25,943 INFO [main] com.bigdata.HdfsApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-12-21 23:26:26,658 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
+2021-12-21 23:26:26,665 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-21 23:26:26,666 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-12-21 23:26:26,666 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-12-21 23:26:26,760 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-12-21 23:26:26,760 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 775 ms
+2021-12-21 23:26:26,896 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-21 23:26:27,022 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
+2021-12-21 23:26:27,040 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-21 23:26:27,047 INFO [main] com.bigdata.HdfsApplication [StartupInfoLogger.java : 61] Started HdfsApplication in 1.454 seconds (JVM running for 2.747)
+2021-12-21 23:29:10,085 INFO [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-21 23:29:10,086 INFO [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2021-12-21 23:29:10,090 INFO [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 4 ms
+2021-12-21 23:29:10,189 WARN [http-nio-8080-exec-2] org.apache.hadoop.util.Shell [Shell.java : 694] Did not find winutils.exe: {}
+java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+	at org.apache.hadoop.util.Shell.fileNotFoundException(Shell.java:549)
+	at org.apache.hadoop.util.Shell.getHadoopHomeDir(Shell.java:570)
+	at org.apache.hadoop.util.Shell.getQualifiedBin(Shell.java:593)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:690)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:78)
+	at org.apache.hadoop.fs.FileSystem$Cache$Key.<init>(FileSystem.java:3533)
+	at org.apache.hadoop.fs.FileSystem$Cache$Key.<init>(FileSystem.java:3528)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3370)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:477)
+	at org.apache.hadoop.fs.FileSystem$1.run(FileSystem.java:216)
+	at org.apache.hadoop.fs.FileSystem$1.run(FileSystem.java:213)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:213)
+	at com.bigdata.hadoop.HdfsService.getFileSystem(HdfsService.java:97)
+	at com.bigdata.hadoop.HdfsService.existFile(HdfsService.java:132)
+	at com.bigdata.hadoop.MapReduceService.wordCount(MapReduceService.java:33)
+	at com.bigdata.controller.MapReduceAction.wordCount(MapReduceAction.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.
+	at org.apache.hadoop.util.Shell.checkHadoopHomeInner(Shell.java:469)
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:440)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:517)
+	... 65 common frames omitted
+2021-12-21 23:29:11,073 INFO [http-nio-8080-exec-2] o.a.h.conf.Configuration.deprecation [Configuration.java : 1395] mapred.job.tracker is deprecated. Instead, use mapreduce.jobtracker.address
+2021-12-21 23:29:11,432 INFO [http-nio-8080-exec-2] o.a.c.b.FluentPropertyBeanIntrospector [FluentPropertyBeanIntrospector.java : 147] Error when creating PropertyDescriptor for public final void org.apache.commons.configuration2.AbstractConfiguration.setProperty(java.lang.String,java.lang.Object)! Ignoring this property.
+2021-12-21 23:29:11,443 WARN [http-nio-8080-exec-2] o.a.h.metrics2.impl.MetricsConfig [MetricsConfig.java : 134] Cannot locate configuration: tried hadoop-metrics2-jobtracker.properties,hadoop-metrics2.properties
+2021-12-21 23:29:11,455 INFO [http-nio-8080-exec-2] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 374] Scheduled Metric snapshot period at 10 second(s).
+2021-12-21 23:29:11,456 INFO [http-nio-8080-exec-2] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 191] JobTracker metrics system started
+2021-12-21 23:29:11,927 WARN [http-nio-8080-exec-2] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 147] Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+2021-12-21 23:29:11,948 WARN [http-nio-8080-exec-2] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 480] No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2021-12-21 23:29:11,970 INFO [http-nio-8080-exec-2] o.a.h.m.lib.input.FileInputFormat [FileInputFormat.java : 292] Total input files to process : 1
+2021-12-21 23:29:12,000 INFO [http-nio-8080-exec-2] o.a.h.m.l.i.CombineFileInputFormat [CombineFileInputFormat.java : 428] DEBUG: Terminated node allocation with : CompletedNodes: 1, size left: 150
+2021-12-21 23:29:12,019 INFO [http-nio-8080-exec-2] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 205] number of splits:1
+2021-12-21 23:29:12,069 INFO [http-nio-8080-exec-2] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 301] Submitting tokens for job: job_local343101622_0001
+2021-12-21 23:29:12,069 INFO [http-nio-8080-exec-2] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 302] Executing with tokens: []
+2021-12-21 23:29:12,157 INFO [http-nio-8080-exec-2] org.apache.hadoop.mapreduce.Job [Job.java : 1574] The url to track the job: http://localhost:8080/
+2021-12-21 23:29:12,159 INFO [http-nio-8080-exec-2] org.apache.hadoop.mapreduce.Job [Job.java : 1619] Running job: job_local343101622_0001
+2021-12-21 23:29:12,161 INFO [Thread-19] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 501] OutputCommitter set in config null
+2021-12-21 23:29:12,168 INFO [Thread-19] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
+2021-12-21 23:29:12,168 INFO [Thread-19] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2021-12-21 23:29:12,169 INFO [Thread-19] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 519] OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+2021-12-21 23:29:12,358 INFO [Thread-19] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 478] Waiting for map tasks
+2021-12-21 23:29:12,359 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 252] Starting task: attempt_local343101622_0001_m_000000_0
+2021-12-21 23:29:12,380 INFO [LocalJobRunner Map Task Executor #0] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
+2021-12-21 23:29:12,380 INFO [LocalJobRunner Map Task Executor #0] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2021-12-21 23:29:12,385 INFO [LocalJobRunner Map Task Executor #0] o.a.h.y.util.ProcfsBasedProcessTree [ProcfsBasedProcessTree.java : 178] ProcfsBasedProcessTree currently is supported only on Linux.
+2021-12-21 23:29:12,385 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 625]  Using ResourceCalculatorProcessTree : null
+2021-12-21 23:29:12,392 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 768] Processing split: Paths:/user/hadoop/test/count.txt:0+150
+2021-12-21 23:29:12,425 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1219] (EQUATOR) 0 kvi 26214396(104857584)
+2021-12-21 23:29:12,426 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1012] mapreduce.task.io.sort.mb: 100
+2021-12-21 23:29:12,426 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1013] soft limit at 83886080
+2021-12-21 23:29:12,426 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1014] bufstart = 0; bufvoid = 104857600
+2021-12-21 23:29:12,426 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1015] kvstart = 26214396; length = 6553600
+2021-12-21 23:29:12,429 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 409] Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2021-12-21 23:29:13,175 INFO [http-nio-8080-exec-2] org.apache.hadoop.mapreduce.Job [Job.java : 1640] Job job_local343101622_0001 running in uber mode : false
+2021-12-21 23:29:13,177 INFO [http-nio-8080-exec-2] org.apache.hadoop.mapreduce.Job [Job.java : 1647]  map 0% reduce 0%
+2021-12-21 23:29:13,283 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 
+2021-12-21 23:29:13,283 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1476] Starting flush of map output
+2021-12-21 23:29:13,283 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1498] Spilling map output
+2021-12-21 23:29:13,283 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1499] bufstart = 0; bufend = 224; bufvoid = 104857600
+2021-12-21 23:29:13,283 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1501] kvstart = 26214396(104857584); kvend = 26214304(104857216); length = 93/6553600
+2021-12-21 23:29:13,311 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1696] Finished spill 0
+2021-12-21 23:29:13,328 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 1232] Task:attempt_local343101622_0001_m_000000_0 is done. And is in the process of committing
+2021-12-21 23:29:13,332 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] map
+2021-12-21 23:29:13,332 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 1368] Task 'attempt_local343101622_0001_m_000000_0' done.
+2021-12-21 23:29:13,338 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 1264] Final Counters for attempt_local343101622_0001_m_000000_0: Counters: 23
+	File System Counters
+		FILE: Number of bytes read=185
+		FILE: Number of bytes written=491895
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=150
+		HDFS: Number of bytes written=0
+		HDFS: Number of read operations=9
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Map-Reduce Framework
+		Map input records=24
+		Map output records=24
+		Map output bytes=224
+		Map output materialized bytes=211
+		Input split bytes=140
+		Combine input records=24
+		Combine output records=18
+		Spilled Records=18
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=11
+		Total committed heap usage (bytes)=333971456
+	File Input Format Counters 
+		Bytes Read=0
+2021-12-21 23:29:13,338 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 277] Finishing task: attempt_local343101622_0001_m_000000_0
+2021-12-21 23:29:13,339 INFO [Thread-19] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 486] map task executor complete.
+2021-12-21 23:29:13,341 INFO [Thread-19] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 478] Waiting for reduce tasks
+2021-12-21 23:29:13,342 INFO [pool-8-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 330] Starting task: attempt_local343101622_0001_r_000000_0
+2021-12-21 23:29:13,352 INFO [pool-8-thread-1] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
+2021-12-21 23:29:13,352 INFO [pool-8-thread-1] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2021-12-21 23:29:13,353 INFO [pool-8-thread-1] o.a.h.y.util.ProcfsBasedProcessTree [ProcfsBasedProcessTree.java : 178] ProcfsBasedProcessTree currently is supported only on Linux.
+2021-12-21 23:29:13,353 INFO [pool-8-thread-1] org.apache.hadoop.mapred.Task [Task.java : 625]  Using ResourceCalculatorProcessTree : null
+2021-12-21 23:29:13,355 INFO [pool-8-thread-1] org.apache.hadoop.mapred.ReduceTask [ReduceTask.java : 363] Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@2f8e60cc
+2021-12-21 23:29:13,357 WARN [pool-8-thread-1] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 151] JobTracker metrics system already initialized!
+2021-12-21 23:29:13,365 INFO [pool-8-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 208] MergerManager: memoryLimit=2651586560, maxSingleShuffleLimit=662896640, mergeThreshold=1750047232, ioSortFactor=10, memToMemMergeOutputsThreshold=10
+2021-12-21 23:29:13,367 INFO [EventFetcher for fetching Map Completion Events] o.a.h.m.task.reduce.EventFetcher [EventFetcher.java : 61] attempt_local343101622_0001_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
+2021-12-21 23:29:13,393 INFO [localfetcher#1] o.a.h.m.task.reduce.LocalFetcher [LocalFetcher.java : 145] localfetcher#1 about to shuffle output of map attempt_local343101622_0001_m_000000_0 decomp: 207 len: 211 to MEMORY
+2021-12-21 23:29:13,402 INFO [localfetcher#1] o.a.h.m.t.reduce.InMemoryMapOutput [InMemoryMapOutput.java : 94] Read 207 bytes from map-output for attempt_local343101622_0001_m_000000_0
+2021-12-21 23:29:13,404 INFO [localfetcher#1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 323] closeInMemoryFile -> map-output of size: 207, inMemoryMapOutputs.size() -> 1, commitMemory -> 0, usedMemory ->207
+2021-12-21 23:29:13,405 INFO [EventFetcher for fetching Map Completion Events] o.a.h.m.task.reduce.EventFetcher [EventFetcher.java : 76] EventFetcher is interrupted.. Returning
+2021-12-21 23:29:13,406 INFO [pool-8-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 1 / 1 copied.
+2021-12-21 23:29:13,406 INFO [pool-8-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 695] finalMerge called with 1 in-memory map-outputs and 0 on-disk map-outputs
+2021-12-21 23:29:13,414 INFO [pool-8-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 606] Merging 1 sorted segments
+2021-12-21 23:29:13,415 INFO [pool-8-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 705] Down to the last merge-pass, with 1 segments left of total size: 200 bytes
+2021-12-21 23:29:13,417 INFO [pool-8-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 762] Merged 1 segments, 207 bytes to disk to satisfy reduce memory limit
+2021-12-21 23:29:13,418 INFO [pool-8-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 792] Merging 1 files, 211 bytes from disk
+2021-12-21 23:29:13,418 INFO [pool-8-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 807] Merging 0 segments, 0 bytes from memory into reduce
+2021-12-21 23:29:13,419 INFO [pool-8-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 606] Merging 1 sorted segments
+2021-12-21 23:29:13,421 INFO [pool-8-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 705] Down to the last merge-pass, with 1 segments left of total size: 200 bytes
+2021-12-21 23:29:13,421 INFO [pool-8-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 1 / 1 copied.
+2021-12-21 23:29:14,002 INFO [pool-8-thread-1] o.a.h.conf.Configuration.deprecation [Configuration.java : 1395] mapred.skip.on is deprecated. Instead, use mapreduce.job.skiprecords
+2021-12-21 23:29:14,183 INFO [http-nio-8080-exec-2] org.apache.hadoop.mapreduce.Job [Job.java : 1647]  map 100% reduce 0%
+2021-12-21 23:29:14,971 INFO [pool-8-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1232] Task:attempt_local343101622_0001_r_000000_0 is done. And is in the process of committing
+2021-12-21 23:29:14,973 INFO [pool-8-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 1 / 1 copied.
+2021-12-21 23:29:14,973 INFO [pool-8-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1409] Task attempt_local343101622_0001_r_000000_0 is allowed to commit now
+2021-12-21 23:29:15,123 INFO [pool-8-thread-1] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 598] Saved output of task 'attempt_local343101622_0001_r_000000_0' to hdfs://localhost:9000/output/wordCount
+2021-12-21 23:29:15,124 INFO [pool-8-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] reduce > reduce
+2021-12-21 23:29:15,125 INFO [pool-8-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1368] Task 'attempt_local343101622_0001_r_000000_0' done.
+2021-12-21 23:29:15,126 INFO [pool-8-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1264] Final Counters for attempt_local343101622_0001_r_000000_0: Counters: 29
+	File System Counters
+		FILE: Number of bytes read=639
+		FILE: Number of bytes written=492106
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=150
+		HDFS: Number of bytes written=133
+		HDFS: Number of read operations=14
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=4
+	Map-Reduce Framework
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=18
+		Reduce shuffle bytes=211
+		Reduce input records=18
+		Reduce output records=18
+		Spilled Records=18
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=17
+		Total committed heap usage (bytes)=522190848
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Output Format Counters 
+		Bytes Written=133
+2021-12-21 23:29:15,126 INFO [pool-8-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 353] Finishing task: attempt_local343101622_0001_r_000000_0
+2021-12-21 23:29:15,126 INFO [Thread-19] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 486] reduce task executor complete.
+2021-12-21 23:29:15,194 INFO [http-nio-8080-exec-2] org.apache.hadoop.mapreduce.Job [Job.java : 1647]  map 100% reduce 100%
+2021-12-21 23:29:16,201 INFO [http-nio-8080-exec-2] org.apache.hadoop.mapreduce.Job [Job.java : 1658] Job job_local343101622_0001 completed successfully
+2021-12-21 23:29:16,209 INFO [http-nio-8080-exec-2] org.apache.hadoop.mapreduce.Job [Job.java : 1665] Counters: 35
+	File System Counters
+		FILE: Number of bytes read=824
+		FILE: Number of bytes written=984001
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=300
+		HDFS: Number of bytes written=133
+		HDFS: Number of read operations=23
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=6
+	Map-Reduce Framework
+		Map input records=24
+		Map output records=24
+		Map output bytes=224
+		Map output materialized bytes=211
+		Input split bytes=140
+		Combine input records=24
+		Combine output records=18
+		Reduce input groups=18
+		Reduce shuffle bytes=211
+		Reduce input records=18
+		Reduce output records=18
+		Spilled Records=36
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=28
+		Total committed heap usage (bytes)=856162304
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=133
