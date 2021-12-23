@@ -36,4 +36,21 @@ public class MapReduceAction {
         mapReduceService.wordCount(jobName, inputPath);
         return new Result(ResultCode.SUCCESS, "单词统计成功");
     }
+
+    /**
+     * localhost:8080/hadoop/reduce/wordCount?jobName=wordCount&inputPath=hdfs://localhost:9000/user/hadoop/test/group_count.txt
+     * @param jobName
+     * @param inputPath
+     * @return
+     * @throws Exception
+     */
+    @PostMapping(value = "groupSort")
+    public Result groupSort(@RequestParam("jobName") String jobName, @RequestParam("inputPath") String inputPath)
+            throws Exception {
+        if (StringUtils.isEmpty(jobName) || StringUtils.isEmpty(inputPath)) {
+            return new Result(ResultCode.FAILURE, "请求参数为空");
+        }
+        mapReduceService.groupSort(jobName, inputPath);
+        return new Result(ResultCode.SUCCESS, "分组统计、排序成功");
+    }
 }

@@ -15,9 +15,6 @@ public class MapReduceService {
     // 默认reduce输出目录
     private static final String OUTPUT_PATH = "/output";
 
-    @Autowired
-    private HdfsService hdfsService;
-
     /**
      * 单词统计，统计某个单词出现的次数
      * @param jobName
@@ -34,5 +31,17 @@ public class MapReduceService {
             HdfsService.deleteFile(outputPath);
         }
         HdfsService.getWordCountJobsConf(jobName, inputPath, outputPath);
+    }
+
+    public void groupSort(String jobName, String inputPath) throws Exception {
+        if (StringUtils.isEmpty(jobName) || StringUtils.isEmpty(inputPath)) {
+            return;
+        }
+        // 输出目录 = output/当前Job
+        String outputPath = OUTPUT_PATH + "/" + jobName;
+        if (HdfsService.existFile(outputPath)) {
+            HdfsService.deleteFile(outputPath);
+        }
+        HdfsService.groupSort(jobName, inputPath, outputPath);
     }
 }

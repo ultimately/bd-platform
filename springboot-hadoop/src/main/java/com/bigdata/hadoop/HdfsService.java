@@ -1,6 +1,8 @@
 package com.bigdata.hadoop;
 
 import com.alibaba.fastjson.JSON;
+import com.bigdata.entity.GroupSortModel;
+import com.bigdata.hadoop.reduce.mapper.GroupSort;
 import com.bigdata.hadoop.reduce.mapper.WordCountMap;
 import com.bigdata.hadoop.reduce.mapper.WordCountReduce;
 import org.apache.commons.lang3.StringUtils;
@@ -82,6 +84,39 @@ public class HdfsService {
 
         FileInputFormat.addInputPath(job, new Path(inputPath));
         FileOutputFormat.setOutputPath(job, new Path(outputPath));
+        job.waitForCompletion(true);
+    }
+
+
+    public static void groupSort(String jobName, String inputPath, String outputPath)
+            throws IOException, ClassNotFoundException, InterruptedException {
+        Configuration conf = getConfiguration();
+        Job job = Job.getInstance(conf, jobName);
+        job.setJarByClass(GroupSort.class);
+
+        // 设置reduce文件拆分个数
+        // job.setNumReduceTasks(3);
+        // 设置mapper信息
+        job.setMapperClass(GroupSort.GroupSortMapper.class);
+        job.setPartitionerClass(GroupSort.GroupSortPartitioner.class);
+        job.setGroupingComparatorClass(GroupSort.GroupSortComparator.class);
+        // 设置reduce信息
+        job.setReducerClass(GroupSort.GroupSortReduce.class);
+
+        // 设置Mapper的输出
+        job.setMapOutputKeyClass(GroupSortModel.class);
+        job.setMapOutputValueClass(IntWritable.class);
+
+        // 设置mapper和reduce的输出格式，如果相同则只需设置一个
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(IntWritable.class);
+
+        // 指定输入文件的位置
+        FileInputFormat.addInputPath(job, new Path(inputPath));
+        // 指定输入文件的位置
+        FileOutputFormat.setOutputPath(job, new Path(outputPath));
+
+        // 运行
         job.waitForCompletion(true);
     }
 
