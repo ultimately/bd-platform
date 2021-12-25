@@ -2,15 +2,14 @@ package com.bigdata.hadoop;
 
 import com.alibaba.fastjson.JSON;
 import com.bigdata.entity.GroupSortModel;
-import com.bigdata.hadoop.reduce.mapper.GroupSort;
-import com.bigdata.hadoop.reduce.mapper.WordCountMap;
-import com.bigdata.hadoop.reduce.mapper.WordCountReduce;
+import com.bigdata.hadoop.reduce.mapper.*;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.*;
 import org.apache.hadoop.hdfs.web.JsonUtil;
 import org.apache.hadoop.io.IOUtils;
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.CombineTextInputFormat;
@@ -117,6 +116,31 @@ public class HdfsService {
         FileOutputFormat.setOutputPath(job, new Path(outputPath));
 
         // 运行
+        job.waitForCompletion(true);
+    }
+
+    public static void join(String jobName, String inputPath, String outputPath)
+            throws IOException, ClassNotFoundException, InterruptedException {
+        Configuration config = getConfiguration();
+        Job job = Job.getInstance(config, jobName);
+        // 设置jar中的启动类，可以根据这个类找到相应的jar包
+        job.setJarByClass(com.hadoop.reduce.model.OrderInfo.class);
+
+        job.setMapperClass(JoinMapper.class);
+        job.setReducerClass(JoinReduce.class);
+
+        // 设置Mapper的输出
+        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputValueClass(com.hadoop.reduce.model.OrderInfo.class);
+
+        // 设置reduce的输出
+        job.setOutputKeyClass(com.hadoop.reduce.model.OrderInfo.class);
+        job.setOutputValueClass(NullWritable.class);
+
+        // 指定输入输出文件的位置
+        FileInputFormat.setInputPaths(job, new Path(inputPath));
+        FileOutputFormat.setOutputPath(job, new Path(outputPath));
+
         job.waitForCompletion(true);
     }
 

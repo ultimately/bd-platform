@@ -44,4 +44,16 @@ public class MapReduceService {
         }
         HdfsService.groupSort(jobName, inputPath, outputPath);
     }
+
+    public void join(String jobName, String inputPath) throws Exception {
+        if (StringUtils.isEmpty(jobName) || StringUtils.isEmpty(inputPath)) {
+            return;
+        }
+        // 输出目录 = output/当前Job
+        String outputPath = OUTPUT_PATH + "/" + jobName;
+        if (HdfsService.existFile(outputPath)) {
+            HdfsService.deleteFile(outputPath);
+        }
+        HdfsService.join(jobName, inputPath, outputPath);
+    }
 }

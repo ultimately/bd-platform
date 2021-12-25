@@ -1,37 +1,14 @@
-2021-12-23 23:11:00,537 INFO [main] com.bigdata.HdfsApplication [StartupInfoLogger.java : 55] Starting HdfsApplication on DESKTOP-ORCB6UD with PID 12028 (C:\Users\UI\Desktop\bd-platform\springboot-hadoop\target\classes started by UI in C:\Users\UI\Desktop\bd-platform)
-2021-12-23 23:11:00,540 INFO [main] com.bigdata.HdfsApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
-2021-12-23 23:11:02,403 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 8080 (http)
-2021-12-23 23:11:02,412 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-8080"]
-2021-12-23 23:11:02,413 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-12-23 23:11:02,413 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.39]
-2021-12-23 23:11:02,511 INFO [main] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-12-23 23:11:02,511 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 1930 ms
-2021-12-23 23:11:02,668 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
-2021-12-23 23:11:02,949 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-8080"]
-2021-12-23 23:11:02,985 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 8080 (http) with context path ''
-2021-12-23 23:11:02,992 INFO [main] com.bigdata.HdfsApplication [StartupInfoLogger.java : 61] Started HdfsApplication in 3.073 seconds (JVM running for 4.615)
-2021-12-23 23:46:22,034 INFO [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-12-23 23:46:22,035 INFO [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
-2021-12-23 23:46:22,042 INFO [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 7 ms
-2021-12-23 23:46:23,367 WARN [http-nio-8080-exec-3] org.apache.hadoop.util.Shell [Shell.java : 694] Did not find winutils.exe: {}
-java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
-	at org.apache.hadoop.util.Shell.fileNotFoundException(Shell.java:549)
-	at org.apache.hadoop.util.Shell.getHadoopHomeDir(Shell.java:570)
-	at org.apache.hadoop.util.Shell.getQualifiedBin(Shell.java:593)
-	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:690)
-	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:78)
-	at org.apache.hadoop.fs.FileSystem$Cache$Key.<init>(FileSystem.java:3533)
-	at org.apache.hadoop.fs.FileSystem$Cache$Key.<init>(FileSystem.java:3528)
-	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3370)
-	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:477)
-	at org.apache.hadoop.fs.FileSystem$1.run(FileSystem.java:216)
-	at org.apache.hadoop.fs.FileSystem$1.run(FileSystem.java:213)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at javax.security.auth.Subject.doAs(Subject.java:422)
-	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
-	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:213)
-	at com.bigdata.hadoop.HdfsService.getFileSystem(HdfsService.java:132)
-	at com.bigdata.hadoop.HdfsService.uploadFile(HdfsService.java:342)
+2021-12-25 16:14:08,859 INFO [http-nio-8080-exec-7] o.a.h.conf.Configuration.deprecation [Configuration.java : 1395] mapred.job.tracker is deprecated. Instead, use mapreduce.jobtracker.address
+2021-12-25 16:14:09,239 ERROR [http-nio-8080-exec-7] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 175] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.io.FileNotFoundException: File C:/Users/UI/Desktop/bd-platform/data/product_count.txt does not exist
+	at org.apache.hadoop.fs.RawLocalFileSystem.deprecatedGetFileStatus(RawLocalFileSystem.java:641)
+	at org.apache.hadoop.fs.RawLocalFileSystem.getFileLinkStatusInternal(RawLocalFileSystem.java:930)
+	at org.apache.hadoop.fs.RawLocalFileSystem.getFileStatus(RawLocalFileSystem.java:631)
+	at org.apache.hadoop.fs.FilterFileSystem.getFileStatus(FilterFileSystem.java:454)
+	at org.apache.hadoop.fs.FileUtil.copy(FileUtil.java:386)
+	at org.apache.hadoop.fs.FileSystem.copyFromLocalFile(FileSystem.java:2420)
+	at org.apache.hadoop.fs.FileSystem.copyFromLocalFile(FileSystem.java:2386)
+	at com.bigdata.hadoop.HdfsService.uploadFile(HdfsService.java:349)
 	at com.bigdata.controller.HdfsAction.uploadFile(HdfsAction.java:194)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -83,133 +60,124 @@ java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and ha
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.
-	at org.apache.hadoop.util.Shell.checkHadoopHomeInner(Shell.java:469)
-	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:440)
-	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:517)
-	... 64 common frames omitted
-2021-12-23 23:48:37,207 INFO [http-nio-8080-exec-2] o.a.h.conf.Configuration.deprecation [Configuration.java : 1395] mapred.job.tracker is deprecated. Instead, use mapreduce.jobtracker.address
-2021-12-23 23:48:37,484 INFO [http-nio-8080-exec-2] o.a.c.b.FluentPropertyBeanIntrospector [FluentPropertyBeanIntrospector.java : 147] Error when creating PropertyDescriptor for public final void org.apache.commons.configuration2.AbstractConfiguration.setProperty(java.lang.String,java.lang.Object)! Ignoring this property.
-2021-12-23 23:48:37,498 WARN [http-nio-8080-exec-2] o.a.h.metrics2.impl.MetricsConfig [MetricsConfig.java : 134] Cannot locate configuration: tried hadoop-metrics2-jobtracker.properties,hadoop-metrics2.properties
-2021-12-23 23:48:37,519 INFO [http-nio-8080-exec-2] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 374] Scheduled Metric snapshot period at 10 second(s).
-2021-12-23 23:48:37,520 INFO [http-nio-8080-exec-2] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 191] JobTracker metrics system started
-2021-12-23 23:48:37,985 WARN [http-nio-8080-exec-2] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 147] Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
-2021-12-23 23:48:38,025 WARN [http-nio-8080-exec-2] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 480] No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
-2021-12-23 23:48:38,074 INFO [http-nio-8080-exec-2] o.a.h.m.lib.input.FileInputFormat [FileInputFormat.java : 292] Total input files to process : 1
-2021-12-23 23:48:38,167 INFO [http-nio-8080-exec-2] o.a.h.m.l.i.CombineFileInputFormat [CombineFileInputFormat.java : 428] DEBUG: Terminated node allocation with : CompletedNodes: 1, size left: 686
-2021-12-23 23:48:38,191 INFO [http-nio-8080-exec-2] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 205] number of splits:1
-2021-12-23 23:48:38,259 INFO [http-nio-8080-exec-2] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 301] Submitting tokens for job: job_local32065182_0001
-2021-12-23 23:48:38,259 INFO [http-nio-8080-exec-2] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 302] Executing with tokens: []
-2021-12-23 23:48:38,397 INFO [http-nio-8080-exec-2] org.apache.hadoop.mapreduce.Job [Job.java : 1574] The url to track the job: http://localhost:8080/
-2021-12-23 23:48:38,398 INFO [http-nio-8080-exec-2] org.apache.hadoop.mapreduce.Job [Job.java : 1619] Running job: job_local32065182_0001
-2021-12-23 23:48:38,402 INFO [Thread-24] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 501] OutputCommitter set in config null
-2021-12-23 23:48:38,408 INFO [Thread-24] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
-2021-12-23 23:48:38,409 INFO [Thread-24] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
-2021-12-23 23:48:38,409 INFO [Thread-24] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 519] OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
-2021-12-23 23:48:38,599 INFO [Thread-24] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 478] Waiting for map tasks
-2021-12-23 23:48:38,601 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 252] Starting task: attempt_local32065182_0001_m_000000_0
-2021-12-23 23:48:38,625 INFO [LocalJobRunner Map Task Executor #0] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
-2021-12-23 23:48:38,625 INFO [LocalJobRunner Map Task Executor #0] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
-2021-12-23 23:48:38,633 INFO [LocalJobRunner Map Task Executor #0] o.a.h.y.util.ProcfsBasedProcessTree [ProcfsBasedProcessTree.java : 178] ProcfsBasedProcessTree currently is supported only on Linux.
-2021-12-23 23:48:38,634 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 625]  Using ResourceCalculatorProcessTree : null
-2021-12-23 23:48:38,668 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 768] Processing split: Paths:/user/hadoop/test/group_count.txt:0+686
-2021-12-23 23:48:38,743 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1219] (EQUATOR) 0 kvi 26214396(104857584)
-2021-12-23 23:48:38,744 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1012] mapreduce.task.io.sort.mb: 100
-2021-12-23 23:48:38,744 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1013] soft limit at 83886080
-2021-12-23 23:48:38,744 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1014] bufstart = 0; bufvoid = 104857600
-2021-12-23 23:48:38,744 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1015] kvstart = 26214396; length = 6553600
-2021-12-23 23:48:38,748 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 409] Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
-2021-12-23 23:48:39,285 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 
-2021-12-23 23:48:39,285 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1476] Starting flush of map output
-2021-12-23 23:48:39,286 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1498] Spilling map output
-2021-12-23 23:48:39,286 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1499] bufstart = 0; bufend = 1568; bufvoid = 104857600
-2021-12-23 23:48:39,286 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1501] kvstart = 26214396(104857584); kvend = 26213504(104854016); length = 893/6553600
-2021-12-23 23:48:39,301 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1696] Finished spill 0
-2021-12-23 23:48:39,314 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 1232] Task:attempt_local32065182_0001_m_000000_0 is done. And is in the process of committing
-2021-12-23 23:48:39,317 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] map
-2021-12-23 23:48:39,318 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 1368] Task 'attempt_local32065182_0001_m_000000_0' done.
-2021-12-23 23:48:39,341 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 1264] Final Counters for attempt_local32065182_0001_m_000000_0: Counters: 23
+2021-12-25 16:15:08,624 WARN [http-nio-8080-exec-1] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java : 199] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2021-12-25 16:15:12,689 WARN [http-nio-8080-exec-3] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 151] JobTracker metrics system already initialized!
+2021-12-25 16:15:12,713 WARN [http-nio-8080-exec-3] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 147] Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+2021-12-25 16:15:12,715 WARN [http-nio-8080-exec-3] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 480] No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2021-12-25 16:15:12,720 INFO [http-nio-8080-exec-3] o.a.h.m.lib.input.FileInputFormat [FileInputFormat.java : 292] Total input files to process : 1
+2021-12-25 16:15:12,725 INFO [http-nio-8080-exec-3] o.a.h.m.l.i.CombineFileInputFormat [CombineFileInputFormat.java : 428] DEBUG: Terminated node allocation with : CompletedNodes: 1, size left: 338
+2021-12-25 16:15:12,735 INFO [http-nio-8080-exec-3] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 205] number of splits:1
+2021-12-25 16:15:12,780 INFO [http-nio-8080-exec-3] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 301] Submitting tokens for job: job_local430762417_0002
+2021-12-25 16:15:12,781 INFO [http-nio-8080-exec-3] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 302] Executing with tokens: []
+2021-12-25 16:15:12,899 INFO [http-nio-8080-exec-3] org.apache.hadoop.mapreduce.Job [Job.java : 1574] The url to track the job: http://localhost:8080/
+2021-12-25 16:15:12,900 INFO [http-nio-8080-exec-3] org.apache.hadoop.mapreduce.Job [Job.java : 1619] Running job: job_local430762417_0002
+2021-12-25 16:15:12,901 INFO [Thread-42] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 501] OutputCommitter set in config null
+2021-12-25 16:15:12,901 INFO [Thread-42] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
+2021-12-25 16:15:12,902 INFO [Thread-42] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2021-12-25 16:15:12,902 INFO [Thread-42] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 519] OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+2021-12-25 16:15:13,207 INFO [Thread-42] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 478] Waiting for map tasks
+2021-12-25 16:15:13,208 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 252] Starting task: attempt_local430762417_0002_m_000000_0
+2021-12-25 16:15:13,213 INFO [LocalJobRunner Map Task Executor #0] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
+2021-12-25 16:15:13,213 INFO [LocalJobRunner Map Task Executor #0] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2021-12-25 16:15:13,215 INFO [LocalJobRunner Map Task Executor #0] o.a.h.y.util.ProcfsBasedProcessTree [ProcfsBasedProcessTree.java : 178] ProcfsBasedProcessTree currently is supported only on Linux.
+2021-12-25 16:15:13,216 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 625]  Using ResourceCalculatorProcessTree : null
+2021-12-25 16:15:13,229 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 768] Processing split: Paths:/user/hadoop/test/product.txt:0+338
+2021-12-25 16:15:13,271 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1219] (EQUATOR) 0 kvi 26214396(104857584)
+2021-12-25 16:15:13,272 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1012] mapreduce.task.io.sort.mb: 100
+2021-12-25 16:15:13,272 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1013] soft limit at 83886080
+2021-12-25 16:15:13,272 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1014] bufstart = 0; bufvoid = 104857600
+2021-12-25 16:15:13,272 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1015] kvstart = 26214396; length = 6553600
+2021-12-25 16:15:13,273 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 409] Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2021-12-25 16:15:13,419 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 
+2021-12-25 16:15:13,419 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1476] Starting flush of map output
+2021-12-25 16:15:13,419 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1498] Spilling map output
+2021-12-25 16:15:13,419 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1499] bufstart = 0; bufend = 440; bufvoid = 104857600
+2021-12-25 16:15:13,419 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1501] kvstart = 26214396(104857584); kvend = 26214280(104857120); length = 117/6553600
+2021-12-25 16:15:13,426 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1696] Finished spill 0
+2021-12-25 16:15:13,434 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 1232] Task:attempt_local430762417_0002_m_000000_0 is done. And is in the process of committing
+2021-12-25 16:15:13,437 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] map
+2021-12-25 16:15:13,438 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 1368] Task 'attempt_local430762417_0002_m_000000_0' done.
+2021-12-25 16:15:13,439 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 1264] Final Counters for attempt_local430762417_0002_m_000000_0: Counters: 23
 	File System Counters
-		FILE: Number of bytes read=878
-		FILE: Number of bytes written=489364
+		FILE: Number of bytes read=1574
+		FILE: Number of bytes written=980926
 		FILE: Number of read operations=0
 		FILE: Number of large read operations=0
 		FILE: Number of write operations=0
-		HDFS: Number of bytes read=686
-		HDFS: Number of bytes written=686
-		HDFS: Number of read operations=8
+		HDFS: Number of bytes read=1024
+		HDFS: Number of bytes written=1063
+		HDFS: Number of read operations=21
 		HDFS: Number of large read operations=0
-		HDFS: Number of write operations=2
+		HDFS: Number of write operations=8
 	Map-Reduce Framework
-		Map input records=14
-		Map output records=224
-		Map output bytes=1568
-		Map output materialized bytes=69
-		Input split bytes=146
-		Combine input records=224
-		Combine output records=7
-		Spilled Records=7
+		Map input records=10
+		Map output records=30
+		Map output bytes=440
+		Map output materialized bytes=335
+		Input split bytes=142
+		Combine input records=30
+		Combine output records=21
+		Spilled Records=21
 		Failed Shuffles=0
 		Merged Map outputs=0
-		GC time elapsed (ms)=195
+		GC time elapsed (ms)=0
 		Total committed heap usage (bytes)=469762048
 	File Input Format Counters 
 		Bytes Read=0
-2021-12-23 23:48:39,341 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 277] Finishing task: attempt_local32065182_0001_m_000000_0
-2021-12-23 23:48:39,342 INFO [Thread-24] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 486] map task executor complete.
-2021-12-23 23:48:39,343 INFO [Thread-24] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 478] Waiting for reduce tasks
-2021-12-23 23:48:39,344 INFO [pool-9-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 330] Starting task: attempt_local32065182_0001_r_000000_0
-2021-12-23 23:48:39,352 INFO [pool-9-thread-1] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
-2021-12-23 23:48:39,353 INFO [pool-9-thread-1] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
-2021-12-23 23:48:39,353 INFO [pool-9-thread-1] o.a.h.y.util.ProcfsBasedProcessTree [ProcfsBasedProcessTree.java : 178] ProcfsBasedProcessTree currently is supported only on Linux.
-2021-12-23 23:48:39,353 INFO [pool-9-thread-1] org.apache.hadoop.mapred.Task [Task.java : 625]  Using ResourceCalculatorProcessTree : null
-2021-12-23 23:48:39,354 INFO [pool-9-thread-1] org.apache.hadoop.mapred.ReduceTask [ReduceTask.java : 363] Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@3a67507c
-2021-12-23 23:48:39,356 WARN [pool-9-thread-1] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 151] JobTracker metrics system already initialized!
-2021-12-23 23:48:39,362 INFO [pool-9-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 208] MergerManager: memoryLimit=2651586560, maxSingleShuffleLimit=662896640, mergeThreshold=1750047232, ioSortFactor=10, memToMemMergeOutputsThreshold=10
-2021-12-23 23:48:39,364 INFO [EventFetcher for fetching Map Completion Events] o.a.h.m.task.reduce.EventFetcher [EventFetcher.java : 61] attempt_local32065182_0001_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
-2021-12-23 23:48:39,387 INFO [localfetcher#1] o.a.h.m.task.reduce.LocalFetcher [LocalFetcher.java : 145] localfetcher#1 about to shuffle output of map attempt_local32065182_0001_m_000000_0 decomp: 65 len: 69 to MEMORY
-2021-12-23 23:48:39,396 INFO [localfetcher#1] o.a.h.m.t.reduce.InMemoryMapOutput [InMemoryMapOutput.java : 94] Read 65 bytes from map-output for attempt_local32065182_0001_m_000000_0
-2021-12-23 23:48:39,399 INFO [localfetcher#1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 323] closeInMemoryFile -> map-output of size: 65, inMemoryMapOutputs.size() -> 1, commitMemory -> 0, usedMemory ->65
-2021-12-23 23:48:39,400 INFO [EventFetcher for fetching Map Completion Events] o.a.h.m.task.reduce.EventFetcher [EventFetcher.java : 76] EventFetcher is interrupted.. Returning
-2021-12-23 23:48:39,401 INFO [pool-9-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 1 / 1 copied.
-2021-12-23 23:48:39,401 INFO [pool-9-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 695] finalMerge called with 1 in-memory map-outputs and 0 on-disk map-outputs
-2021-12-23 23:48:39,409 INFO [pool-9-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 606] Merging 1 sorted segments
-2021-12-23 23:48:39,409 INFO [pool-9-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 705] Down to the last merge-pass, with 1 segments left of total size: 60 bytes
-2021-12-23 23:48:39,410 INFO [http-nio-8080-exec-2] org.apache.hadoop.mapreduce.Job [Job.java : 1640] Job job_local32065182_0001 running in uber mode : false
-2021-12-23 23:48:39,411 INFO [pool-9-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 762] Merged 1 segments, 65 bytes to disk to satisfy reduce memory limit
-2021-12-23 23:48:39,411 INFO [http-nio-8080-exec-2] org.apache.hadoop.mapreduce.Job [Job.java : 1647]  map 100% reduce 0%
-2021-12-23 23:48:39,412 INFO [pool-9-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 792] Merging 1 files, 69 bytes from disk
-2021-12-23 23:48:39,412 INFO [pool-9-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 807] Merging 0 segments, 0 bytes from memory into reduce
-2021-12-23 23:48:39,412 INFO [pool-9-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 606] Merging 1 sorted segments
-2021-12-23 23:48:39,415 INFO [pool-9-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 705] Down to the last merge-pass, with 1 segments left of total size: 60 bytes
-2021-12-23 23:48:39,415 INFO [pool-9-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 1 / 1 copied.
-2021-12-23 23:48:39,543 INFO [pool-9-thread-1] o.a.h.conf.Configuration.deprecation [Configuration.java : 1395] mapred.skip.on is deprecated. Instead, use mapreduce.job.skiprecords
-2021-12-23 23:48:39,895 INFO [pool-9-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1232] Task:attempt_local32065182_0001_r_000000_0 is done. And is in the process of committing
-2021-12-23 23:48:39,900 INFO [pool-9-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 1 / 1 copied.
-2021-12-23 23:48:39,901 INFO [pool-9-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1409] Task attempt_local32065182_0001_r_000000_0 is allowed to commit now
-2021-12-23 23:48:40,045 INFO [pool-9-thread-1] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 598] Saved output of task 'attempt_local32065182_0001_r_000000_0' to hdfs://localhost:9000/output/groupSort
-2021-12-23 23:48:40,047 INFO [pool-9-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] reduce > reduce
-2021-12-23 23:48:40,047 INFO [pool-9-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1368] Task 'attempt_local32065182_0001_r_000000_0' done.
-2021-12-23 23:48:40,048 INFO [pool-9-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1264] Final Counters for attempt_local32065182_0001_r_000000_0: Counters: 29
+2021-12-25 16:15:13,439 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 277] Finishing task: attempt_local430762417_0002_m_000000_0
+2021-12-25 16:15:13,440 INFO [Thread-42] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 486] map task executor complete.
+2021-12-25 16:15:13,442 INFO [Thread-42] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 478] Waiting for reduce tasks
+2021-12-25 16:15:13,442 INFO [pool-14-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 330] Starting task: attempt_local430762417_0002_r_000000_0
+2021-12-25 16:15:13,446 INFO [pool-14-thread-1] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
+2021-12-25 16:15:13,446 INFO [pool-14-thread-1] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2021-12-25 16:15:13,446 INFO [pool-14-thread-1] o.a.h.y.util.ProcfsBasedProcessTree [ProcfsBasedProcessTree.java : 178] ProcfsBasedProcessTree currently is supported only on Linux.
+2021-12-25 16:15:13,446 INFO [pool-14-thread-1] org.apache.hadoop.mapred.Task [Task.java : 625]  Using ResourceCalculatorProcessTree : null
+2021-12-25 16:15:13,447 INFO [pool-14-thread-1] org.apache.hadoop.mapred.ReduceTask [ReduceTask.java : 363] Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@15beda3d
+2021-12-25 16:15:13,447 WARN [pool-14-thread-1] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 151] JobTracker metrics system already initialized!
+2021-12-25 16:15:13,450 INFO [pool-14-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 208] MergerManager: memoryLimit=2651586560, maxSingleShuffleLimit=662896640, mergeThreshold=1750047232, ioSortFactor=10, memToMemMergeOutputsThreshold=10
+2021-12-25 16:15:13,452 INFO [EventFetcher for fetching Map Completion Events] o.a.h.m.task.reduce.EventFetcher [EventFetcher.java : 61] attempt_local430762417_0002_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
+2021-12-25 16:15:13,456 INFO [localfetcher#2] o.a.h.m.task.reduce.LocalFetcher [LocalFetcher.java : 145] localfetcher#2 about to shuffle output of map attempt_local430762417_0002_m_000000_0 decomp: 331 len: 335 to MEMORY
+2021-12-25 16:15:13,463 INFO [localfetcher#2] o.a.h.m.t.reduce.InMemoryMapOutput [InMemoryMapOutput.java : 94] Read 331 bytes from map-output for attempt_local430762417_0002_m_000000_0
+2021-12-25 16:15:13,464 INFO [localfetcher#2] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 323] closeInMemoryFile -> map-output of size: 331, inMemoryMapOutputs.size() -> 1, commitMemory -> 0, usedMemory ->331
+2021-12-25 16:15:13,465 INFO [EventFetcher for fetching Map Completion Events] o.a.h.m.task.reduce.EventFetcher [EventFetcher.java : 76] EventFetcher is interrupted.. Returning
+2021-12-25 16:15:13,465 INFO [pool-14-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 1 / 1 copied.
+2021-12-25 16:15:13,465 INFO [pool-14-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 695] finalMerge called with 1 in-memory map-outputs and 0 on-disk map-outputs
+2021-12-25 16:15:13,471 INFO [pool-14-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 606] Merging 1 sorted segments
+2021-12-25 16:15:13,471 INFO [pool-14-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 705] Down to the last merge-pass, with 1 segments left of total size: 321 bytes
+2021-12-25 16:15:13,472 INFO [pool-14-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 762] Merged 1 segments, 331 bytes to disk to satisfy reduce memory limit
+2021-12-25 16:15:13,473 INFO [pool-14-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 792] Merging 1 files, 335 bytes from disk
+2021-12-25 16:15:13,473 INFO [pool-14-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 807] Merging 0 segments, 0 bytes from memory into reduce
+2021-12-25 16:15:13,473 INFO [pool-14-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 606] Merging 1 sorted segments
+2021-12-25 16:15:13,476 INFO [pool-14-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 705] Down to the last merge-pass, with 1 segments left of total size: 321 bytes
+2021-12-25 16:15:13,477 INFO [pool-14-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 1 / 1 copied.
+2021-12-25 16:15:13,904 INFO [http-nio-8080-exec-3] org.apache.hadoop.mapreduce.Job [Job.java : 1640] Job job_local430762417_0002 running in uber mode : false
+2021-12-25 16:15:13,905 INFO [http-nio-8080-exec-3] org.apache.hadoop.mapreduce.Job [Job.java : 1647]  map 100% reduce 0%
+2021-12-25 16:15:14,044 INFO [pool-14-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1232] Task:attempt_local430762417_0002_r_000000_0 is done. And is in the process of committing
+2021-12-25 16:15:14,047 INFO [pool-14-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 1 / 1 copied.
+2021-12-25 16:15:14,048 INFO [pool-14-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1409] Task attempt_local430762417_0002_r_000000_0 is allowed to commit now
+2021-12-25 16:15:14,224 INFO [pool-14-thread-1] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 598] Saved output of task 'attempt_local430762417_0002_r_000000_0' to hdfs://localhost:9000/output/product
+2021-12-25 16:15:14,226 INFO [pool-14-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] reduce > reduce
+2021-12-25 16:15:14,226 INFO [pool-14-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1368] Task 'attempt_local430762417_0002_r_000000_0' done.
+2021-12-25 16:15:14,226 INFO [pool-14-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1264] Final Counters for attempt_local430762417_0002_r_000000_0: Counters: 29
 	File System Counters
-		FILE: Number of bytes read=1048
-		FILE: Number of bytes written=489433
+		FILE: Number of bytes read=2276
+		FILE: Number of bytes written=981261
 		FILE: Number of read operations=0
 		FILE: Number of large read operations=0
 		FILE: Number of write operations=0
-		HDFS: Number of bytes read=686
-		HDFS: Number of bytes written=725
-		HDFS: Number of read operations=13
+		HDFS: Number of bytes read=1024
+		HDFS: Number of bytes written=1309
+		HDFS: Number of read operations=26
 		HDFS: Number of large read operations=0
-		HDFS: Number of write operations=4
+		HDFS: Number of write operations=10
 	Map-Reduce Framework
 		Combine input records=0
 		Combine output records=0
-		Reduce input groups=7
-		Reduce shuffle bytes=69
-		Reduce input records=7
-		Reduce output records=7
-		Spilled Records=7
+		Reduce input groups=21
+		Reduce shuffle bytes=335
+		Reduce input records=21
+		Reduce output records=21
+		Spilled Records=21
 		Shuffled Maps =1
 		Failed Shuffles=0
 		Merged Map outputs=1
@@ -223,40 +191,40 @@ Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are un
 		WRONG_MAP=0
 		WRONG_REDUCE=0
 	File Output Format Counters 
-		Bytes Written=39
-2021-12-23 23:48:40,049 INFO [pool-9-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 353] Finishing task: attempt_local32065182_0001_r_000000_0
-2021-12-23 23:48:40,050 INFO [Thread-24] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 486] reduce task executor complete.
-2021-12-23 23:48:40,417 INFO [http-nio-8080-exec-2] org.apache.hadoop.mapreduce.Job [Job.java : 1647]  map 100% reduce 100%
-2021-12-23 23:48:41,430 INFO [http-nio-8080-exec-2] org.apache.hadoop.mapreduce.Job [Job.java : 1658] Job job_local32065182_0001 completed successfully
-2021-12-23 23:48:41,449 INFO [http-nio-8080-exec-2] org.apache.hadoop.mapreduce.Job [Job.java : 1665] Counters: 35
+		Bytes Written=246
+2021-12-25 16:15:14,226 INFO [pool-14-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 353] Finishing task: attempt_local430762417_0002_r_000000_0
+2021-12-25 16:15:14,226 INFO [Thread-42] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 486] reduce task executor complete.
+2021-12-25 16:15:14,910 INFO [http-nio-8080-exec-3] org.apache.hadoop.mapreduce.Job [Job.java : 1647]  map 100% reduce 100%
+2021-12-25 16:15:14,911 INFO [http-nio-8080-exec-3] org.apache.hadoop.mapreduce.Job [Job.java : 1658] Job job_local430762417_0002 completed successfully
+2021-12-25 16:15:14,915 INFO [http-nio-8080-exec-3] org.apache.hadoop.mapreduce.Job [Job.java : 1665] Counters: 35
 	File System Counters
-		FILE: Number of bytes read=1926
-		FILE: Number of bytes written=978797
+		FILE: Number of bytes read=3850
+		FILE: Number of bytes written=1962187
 		FILE: Number of read operations=0
 		FILE: Number of large read operations=0
 		FILE: Number of write operations=0
-		HDFS: Number of bytes read=1372
-		HDFS: Number of bytes written=1411
-		HDFS: Number of read operations=21
+		HDFS: Number of bytes read=2048
+		HDFS: Number of bytes written=2372
+		HDFS: Number of read operations=47
 		HDFS: Number of large read operations=0
-		HDFS: Number of write operations=6
+		HDFS: Number of write operations=18
 	Map-Reduce Framework
-		Map input records=14
-		Map output records=224
-		Map output bytes=1568
-		Map output materialized bytes=69
-		Input split bytes=146
-		Combine input records=224
-		Combine output records=7
-		Reduce input groups=7
-		Reduce shuffle bytes=69
-		Reduce input records=7
-		Reduce output records=7
-		Spilled Records=14
+		Map input records=10
+		Map output records=30
+		Map output bytes=440
+		Map output materialized bytes=335
+		Input split bytes=142
+		Combine input records=30
+		Combine output records=21
+		Reduce input groups=21
+		Reduce shuffle bytes=335
+		Reduce input records=21
+		Reduce output records=21
+		Spilled Records=42
 		Shuffled Maps =1
 		Failed Shuffles=0
 		Merged Map outputs=1
-		GC time elapsed (ms)=195
+		GC time elapsed (ms)=0
 		Total committed heap usage (bytes)=939524096
 	Shuffle Errors
 		BAD_ID=0
@@ -268,4 +236,181 @@ Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are un
 	File Input Format Counters 
 		Bytes Read=0
 	File Output Format Counters 
-		Bytes Written=39
+		Bytes Written=246
+2021-12-25 18:03:12,814 INFO [http-nio-8080-exec-2] o.a.h.conf.Configuration.deprecation [Configuration.java : 1395] mapred.job.tracker is deprecated. Instead, use mapreduce.jobtracker.address
+2021-12-25 18:03:20,093 WARN [http-nio-8080-exec-6] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 151] JobTracker metrics system already initialized!
+2021-12-25 18:03:20,102 WARN [http-nio-8080-exec-6] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 147] Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+2021-12-25 18:03:20,104 WARN [http-nio-8080-exec-6] o.a.h.mapreduce.JobResourceUploader [JobResourceUploader.java : 480] No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2021-12-25 18:03:20,108 INFO [http-nio-8080-exec-6] o.a.h.m.lib.input.FileInputFormat [FileInputFormat.java : 292] Total input files to process : 1
+2021-12-25 18:03:20,113 INFO [http-nio-8080-exec-6] o.a.h.m.l.i.CombineFileInputFormat [CombineFileInputFormat.java : 428] DEBUG: Terminated node allocation with : CompletedNodes: 1, size left: 290
+2021-12-25 18:03:20,120 INFO [http-nio-8080-exec-6] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 205] number of splits:1
+2021-12-25 18:03:20,435 INFO [http-nio-8080-exec-6] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 301] Submitting tokens for job: job_local64502101_0003
+2021-12-25 18:03:20,436 INFO [http-nio-8080-exec-6] o.a.hadoop.mapreduce.JobSubmitter [JobSubmitter.java : 302] Executing with tokens: []
+2021-12-25 18:03:20,492 INFO [http-nio-8080-exec-6] org.apache.hadoop.mapreduce.Job [Job.java : 1574] The url to track the job: http://localhost:8080/
+2021-12-25 18:03:20,493 INFO [http-nio-8080-exec-6] org.apache.hadoop.mapreduce.Job [Job.java : 1619] Running job: job_local64502101_0003
+2021-12-25 18:03:20,500 INFO [Thread-61] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 501] OutputCommitter set in config null
+2021-12-25 18:03:20,500 INFO [Thread-61] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
+2021-12-25 18:03:20,500 INFO [Thread-61] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2021-12-25 18:03:20,500 INFO [Thread-61] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 519] OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+2021-12-25 18:03:20,912 INFO [Thread-61] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 478] Waiting for map tasks
+2021-12-25 18:03:20,912 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 252] Starting task: attempt_local64502101_0003_m_000000_0
+2021-12-25 18:03:21,036 INFO [LocalJobRunner Map Task Executor #0] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
+2021-12-25 18:03:21,036 INFO [LocalJobRunner Map Task Executor #0] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2021-12-25 18:03:21,036 INFO [LocalJobRunner Map Task Executor #0] o.a.h.y.util.ProcfsBasedProcessTree [ProcfsBasedProcessTree.java : 178] ProcfsBasedProcessTree currently is supported only on Linux.
+2021-12-25 18:03:21,036 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 625]  Using ResourceCalculatorProcessTree : null
+2021-12-25 18:03:21,048 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 768] Processing split: Paths:/user/hadoop/test/product.txt:0+290
+2021-12-25 18:03:21,172 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1219] (EQUATOR) 0 kvi 26214396(104857584)
+2021-12-25 18:03:21,172 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1012] mapreduce.task.io.sort.mb: 100
+2021-12-25 18:03:21,172 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1013] soft limit at 83886080
+2021-12-25 18:03:21,172 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1014] bufstart = 0; bufvoid = 104857600
+2021-12-25 18:03:21,172 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1015] kvstart = 26214396; length = 6553600
+2021-12-25 18:03:21,173 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 409] Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2021-12-25 18:03:21,215 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 
+2021-12-25 18:03:21,215 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1476] Starting flush of map output
+2021-12-25 18:03:21,215 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1498] Spilling map output
+2021-12-25 18:03:21,216 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1499] bufstart = 0; bufend = 412; bufvoid = 104857600
+2021-12-25 18:03:21,216 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1501] kvstart = 26214396(104857584); kvend = 26214260(104857040); length = 137/6553600
+2021-12-25 18:03:21,221 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.MapTask [MapTask.java : 1696] Finished spill 0
+2021-12-25 18:03:21,225 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 1232] Task:attempt_local64502101_0003_m_000000_0 is done. And is in the process of committing
+2021-12-25 18:03:21,228 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] map
+2021-12-25 18:03:21,228 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 1368] Task 'attempt_local64502101_0003_m_000000_0' done.
+2021-12-25 18:03:21,228 INFO [LocalJobRunner Map Task Executor #0] org.apache.hadoop.mapred.Task [Task.java : 1264] Final Counters for attempt_local64502101_0003_m_000000_0: Counters: 23
+	File System Counters
+		FILE: Number of bytes read=2754
+		FILE: Number of bytes written=1470454
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=1314
+		HDFS: Number of bytes written=1599
+		HDFS: Number of read operations=37
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=15
+	Map-Reduce Framework
+		Map input records=10
+		Map output records=35
+		Map output bytes=412
+		Map output materialized bytes=441
+		Input split bytes=142
+		Combine input records=35
+		Combine output records=31
+		Spilled Records=31
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=389545984
+	File Input Format Counters 
+		Bytes Read=0
+2021-12-25 18:03:21,228 INFO [LocalJobRunner Map Task Executor #0] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 277] Finishing task: attempt_local64502101_0003_m_000000_0
+2021-12-25 18:03:21,228 INFO [Thread-61] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 486] map task executor complete.
+2021-12-25 18:03:21,230 INFO [Thread-61] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 478] Waiting for reduce tasks
+2021-12-25 18:03:21,230 INFO [pool-17-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 330] Starting task: attempt_local64502101_0003_r_000000_0
+2021-12-25 18:03:21,232 INFO [pool-17-thread-1] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 140] File Output Committer Algorithm version is 2
+2021-12-25 18:03:21,232 INFO [pool-17-thread-1] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 155] FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2021-12-25 18:03:21,232 INFO [pool-17-thread-1] o.a.h.y.util.ProcfsBasedProcessTree [ProcfsBasedProcessTree.java : 178] ProcfsBasedProcessTree currently is supported only on Linux.
+2021-12-25 18:03:21,232 INFO [pool-17-thread-1] org.apache.hadoop.mapred.Task [Task.java : 625]  Using ResourceCalculatorProcessTree : null
+2021-12-25 18:03:21,232 INFO [pool-17-thread-1] org.apache.hadoop.mapred.ReduceTask [ReduceTask.java : 363] Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@2ef7a18
+2021-12-25 18:03:21,232 WARN [pool-17-thread-1] o.a.h.m.impl.MetricsSystemImpl [MetricsSystemImpl.java : 151] JobTracker metrics system already initialized!
+2021-12-25 18:03:21,233 INFO [pool-17-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 208] MergerManager: memoryLimit=2651586560, maxSingleShuffleLimit=662896640, mergeThreshold=1750047232, ioSortFactor=10, memToMemMergeOutputsThreshold=10
+2021-12-25 18:03:21,234 INFO [EventFetcher for fetching Map Completion Events] o.a.h.m.task.reduce.EventFetcher [EventFetcher.java : 61] attempt_local64502101_0003_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
+2021-12-25 18:03:21,236 INFO [localfetcher#3] o.a.h.m.task.reduce.LocalFetcher [LocalFetcher.java : 145] localfetcher#3 about to shuffle output of map attempt_local64502101_0003_m_000000_0 decomp: 437 len: 441 to MEMORY
+2021-12-25 18:03:21,243 INFO [localfetcher#3] o.a.h.m.t.reduce.InMemoryMapOutput [InMemoryMapOutput.java : 94] Read 437 bytes from map-output for attempt_local64502101_0003_m_000000_0
+2021-12-25 18:03:21,244 INFO [localfetcher#3] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 323] closeInMemoryFile -> map-output of size: 437, inMemoryMapOutputs.size() -> 1, commitMemory -> 0, usedMemory ->437
+2021-12-25 18:03:21,244 INFO [EventFetcher for fetching Map Completion Events] o.a.h.m.task.reduce.EventFetcher [EventFetcher.java : 76] EventFetcher is interrupted.. Returning
+2021-12-25 18:03:21,245 INFO [pool-17-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 1 / 1 copied.
+2021-12-25 18:03:21,245 INFO [pool-17-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 695] finalMerge called with 1 in-memory map-outputs and 0 on-disk map-outputs
+2021-12-25 18:03:21,249 INFO [pool-17-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 606] Merging 1 sorted segments
+2021-12-25 18:03:21,249 INFO [pool-17-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 705] Down to the last merge-pass, with 1 segments left of total size: 426 bytes
+2021-12-25 18:03:21,250 INFO [pool-17-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 762] Merged 1 segments, 437 bytes to disk to satisfy reduce memory limit
+2021-12-25 18:03:21,251 INFO [pool-17-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 792] Merging 1 files, 441 bytes from disk
+2021-12-25 18:03:21,251 INFO [pool-17-thread-1] o.a.h.m.task.reduce.MergeManagerImpl [MergeManagerImpl.java : 807] Merging 0 segments, 0 bytes from memory into reduce
+2021-12-25 18:03:21,251 INFO [pool-17-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 606] Merging 1 sorted segments
+2021-12-25 18:03:21,253 INFO [pool-17-thread-1] org.apache.hadoop.mapred.Merger [Merger.java : 705] Down to the last merge-pass, with 1 segments left of total size: 426 bytes
+2021-12-25 18:03:21,254 INFO [pool-17-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 1 / 1 copied.
+2021-12-25 18:03:21,496 INFO [http-nio-8080-exec-6] org.apache.hadoop.mapreduce.Job [Job.java : 1640] Job job_local64502101_0003 running in uber mode : false
+2021-12-25 18:03:21,496 INFO [http-nio-8080-exec-6] org.apache.hadoop.mapreduce.Job [Job.java : 1647]  map 100% reduce 0%
+2021-12-25 18:03:22,168 INFO [pool-17-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1232] Task:attempt_local64502101_0003_r_000000_0 is done. And is in the process of committing
+2021-12-25 18:03:22,171 INFO [pool-17-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] 1 / 1 copied.
+2021-12-25 18:03:22,172 INFO [pool-17-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1409] Task attempt_local64502101_0003_r_000000_0 is allowed to commit now
+2021-12-25 18:03:22,325 INFO [pool-17-thread-1] o.a.h.m.l.output.FileOutputCommitter [FileOutputCommitter.java : 598] Saved output of task 'attempt_local64502101_0003_r_000000_0' to hdfs://localhost:9000/output/product
+2021-12-25 18:03:22,327 INFO [pool-17-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 628] reduce > reduce
+2021-12-25 18:03:22,327 INFO [pool-17-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1368] Task 'attempt_local64502101_0003_r_000000_0' done.
+2021-12-25 18:03:22,327 INFO [pool-17-thread-1] org.apache.hadoop.mapred.Task [Task.java : 1264] Final Counters for attempt_local64502101_0003_r_000000_0: Counters: 29
+	File System Counters
+		FILE: Number of bytes read=3668
+		FILE: Number of bytes written=1470895
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=1314
+		HDFS: Number of bytes written=1910
+		HDFS: Number of read operations=42
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=17
+	Map-Reduce Framework
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=31
+		Reduce shuffle bytes=441
+		Reduce input records=31
+		Reduce output records=31
+		Spilled Records=31
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=389545984
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Output Format Counters 
+		Bytes Written=311
+2021-12-25 18:03:22,328 INFO [pool-17-thread-1] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 353] Finishing task: attempt_local64502101_0003_r_000000_0
+2021-12-25 18:03:22,328 INFO [Thread-61] o.a.hadoop.mapred.LocalJobRunner [LocalJobRunner.java : 486] reduce task executor complete.
+2021-12-25 18:03:22,507 INFO [http-nio-8080-exec-6] org.apache.hadoop.mapreduce.Job [Job.java : 1647]  map 100% reduce 100%
+2021-12-25 18:03:23,514 INFO [http-nio-8080-exec-6] org.apache.hadoop.mapreduce.Job [Job.java : 1658] Job job_local64502101_0003 completed successfully
+2021-12-25 18:03:23,516 INFO [http-nio-8080-exec-6] org.apache.hadoop.mapreduce.Job [Job.java : 1665] Counters: 35
+	File System Counters
+		FILE: Number of bytes read=6422
+		FILE: Number of bytes written=2941349
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=2628
+		HDFS: Number of bytes written=3509
+		HDFS: Number of read operations=79
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=32
+	Map-Reduce Framework
+		Map input records=10
+		Map output records=35
+		Map output bytes=412
+		Map output materialized bytes=441
+		Input split bytes=142
+		Combine input records=35
+		Combine output records=31
+		Reduce input groups=31
+		Reduce shuffle bytes=441
+		Reduce input records=31
+		Reduce output records=31
+		Spilled Records=62
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=779091968
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=311

@@ -53,4 +53,13 @@ public class MapReduceAction {
         mapReduceService.groupSort(jobName, inputPath);
         return new Result(ResultCode.SUCCESS, "分组统计、排序成功");
     }
+
+    @PostMapping(value = "join")
+    public Result join(@RequestParam("jobName") String jobName, @RequestParam("inputPath") String inputPath) throws  Exception{
+        if (StringUtils.isEmpty(jobName) || StringUtils.isEmpty(inputPath)) {
+            return new Result(ResultCode.FAILURE, "请求参数为空");
+        }
+        mapReduceService.join(jobName, inputPath);
+        return new Result(ResultCode.SUCCESS, "表join操作成功");
+    }
 }
