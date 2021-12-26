@@ -3,6 +3,7 @@ package com.bigdata.controller;
 import com.bigdata.entity.Result;
 import com.bigdata.entity.ResultCode;
 import com.bigdata.hadoop.MapReduceService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
  * @Author levlin
  * @Date 2021/12/19
  **/
+@Slf4j
 @RestController
 @RequestMapping(value = "/hadoop/reduce")
 public class MapReduceAction {
@@ -56,10 +58,12 @@ public class MapReduceAction {
 
     @PostMapping(value = "join")
     public Result join(@RequestParam("jobName") String jobName, @RequestParam("inputPath") String inputPath) throws  Exception{
+
         if (StringUtils.isEmpty(jobName) || StringUtils.isEmpty(inputPath)) {
             return new Result(ResultCode.FAILURE, "请求参数为空");
         }
         mapReduceService.join(jobName, inputPath);
         return new Result(ResultCode.SUCCESS, "表join操作成功");
     }
+
 }

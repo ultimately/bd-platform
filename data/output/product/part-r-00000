@@ -1,31 +1,10 @@
-10000001	1
-100000010	1
-10000002	1
-10000003	1
-10000004	1
-10000005	1
-10000006	1
-10000007	1
-10000008	1
-10000009	1
-11,1100	1
-11,4100	1
-11pro	1
-13,1020	1
-13,3100	1
-2,1,100	1
-31,1400	1
-40,13,5100	1
-50,11,1300	1
-8,11,1100	1
-8,12,100	1
-8s	1
-macbook	1
-oneplus	1
-p	2
-华为	2
-小米	1
-方便面	1
-松饼	1
-肉	1
-苹果	3
+OrderInfo(orderId=0, orderDate=, pid=10000001, amount=0, pname=小米2, categoryId=1, price=100.0, flag=1)	1
+OrderInfo(orderId=0, orderDate=, pid=100000010, amount=0, pname=onePlus8, categoryId=11, price=1100.0, flag=1)	1
+OrderInfo(orderId=0, orderDate=, pid=10000002, amount=0, pname=苹果8, categoryId=12, price=100.0, flag=1)	1
+OrderInfo(orderId=0, orderDate=, pid=10000003, amount=0, pname=苹果8S, categoryId=31, price=1400.0, flag=1)	1
+OrderInfo(orderId=0, orderDate=, pid=10000004, amount=0, pname=华为P50, categoryId=11, price=1300.0, flag=1)	1
+OrderInfo(orderId=0, orderDate=, pid=10000005, amount=0, pname=华为P40, categoryId=13, price=5100.0, flag=1)	1
+OrderInfo(orderId=0, orderDate=, pid=10000006, amount=0, pname=苹果11Pro, categoryId=11, price=4100.0, flag=1)	1
+OrderInfo(orderId=0, orderDate=, pid=10000007, amount=0, pname=MacBook, categoryId=13, price=3100.0, flag=1)	1
+OrderInfo(orderId=0, orderDate=, pid=10000008, amount=0, pname=肉松饼, categoryId=11, price=1100.0, flag=1)	1
+OrderInfo(orderId=0, orderDate=, pid=10000009, amount=0, pname=方便面, categoryId=13, price=1020.0, flag=1)	1

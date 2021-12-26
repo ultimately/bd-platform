@@ -28,8 +28,8 @@ public class JoinMapper extends Mapper<LongWritable, Text, Text, OrderInfo> {
     @SneakyThrows
     @Override
     public void map(LongWritable key, Text value, Context context){
-        String line = new String(value.getBytes(), 0, value.getLength(), "GBK");
-        log.info("join data = {}", line);
+        String line = new String(value.getBytes(), 0, value.getLength(), "UTF-8");
+        log.info("map data key = {}, value = {}, context = {}", key, line, context);
 
         if (_TITLE.equals(line)) {
             return;
@@ -50,7 +50,6 @@ public class JoinMapper extends Mapper<LongWritable, Text, Text, OrderInfo> {
             String orderDate = spilt[1];
             pid = spilt[2];
             Integer amount = Integer.parseInt(spilt[3]);
-//          set(Integer orderId, String orderDate, String pid, Integer amount, String pname, Integer categoryId, Double price, String flag)
             orderInfo.set(orderId, orderDate, pid, amount, "", 0, 0.0, ORDER_FLAG);
         } else {
             // 加载产品内容，产品数据有 产品编号，产品名称，种类，价格
